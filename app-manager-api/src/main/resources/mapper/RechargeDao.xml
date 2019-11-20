@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cube.dao.RechargeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cube.entity.RechargeEntity" id="rechargeMap">
+        <result property="id" column="id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="memberId" column="member_id"/>
+        <result property="rechargeAmount" column="recharge_amount"/>
+        <result property="rechargeTime" column="recharge_time"/>
+        <result property="payType" column="pay_type"/>
+        <result property="orderNumber" column="order_number"/>
+        <result property="transactionId" column="transaction_id"/>
+        <result property="whetherSms" column="whether_sms"/>
+        <result property="rechargeStatus" column="recharge_status"/>
+        <result property="remark" column="remark"/>
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsPrice" column="goods_price"/>
+    </resultMap>
+
+
+</mapper>

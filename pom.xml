@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.renren</groupId>
-    <artifactId>renren-security</artifactId>
+    <groupId>com.cube</groupId>
+    <artifactId>app-distribution</artifactId>
     <version>4.0.0</version>
     <packaging>pom</packaging>
 
-    <name>renren-security</name>
+    <name>app-distribution</name>
     <url>https://www.renren.io</url>
 
 	<parent>
@@ -16,10 +16,10 @@
 	</parent>
 
     <modules>
-        <module>renren-common</module>
-        <module>renren-admin</module>
-        <module>renren-api</module>
-		<module>renren-dynamic-datasource</module>
+        <module>app-manager-common</module>
+        <module>app-manager-admin</module>
+        <module>app-manager-dynamic-datasource</module>
+        <module>app-manager-api</module>
         <module>renren-generator</module>
     </modules>
 

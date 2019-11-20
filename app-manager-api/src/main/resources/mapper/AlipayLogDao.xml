@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cube.dao.AlipayLogDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cube.entity.AlipayLogEntity" id="alipayLogMap">
+        <result property="id" column="id"/>
+        <result property="notifyTime" column="notify_time"/>
+        <result property="notifyType" column="notify_type"/>
+        <result property="notifyId" column="notify_id"/>
+        <result property="outTradeNo" column="out_trade_no"/>
+        <result property="subject" column="subject"/>
+        <result property="tradeNo" column="trade_no"/>
+        <result property="tradeStatus" column="trade_status"/>
+        <result property="sellerId" column="seller_id"/>
+        <result property="sellerEmail" column="seller_email"/>
+        <result property="buyerId" column="buyer_id"/>
+        <result property="buyerEmail" column="buyer_email"/>
+        <result property="totalFee" column="total_fee"/>
+        <result property="gmtCreate" column="gmt_create"/>
+        <result property="gmtPayment" column="gmt_payment"/>
+        <result property="payStatus" column="pay_status"/>
+        <result property="orderMoney" column="order_money"/>
+    </resultMap>
+
+
+</mapper>

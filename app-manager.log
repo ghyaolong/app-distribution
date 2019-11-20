@@ -1,0 +1,510 @@
+2019-11-20 16:21:35.802  INFO 303016 --- [main] com.cube.AdminApplication                : Starting AdminApplication on DESKTOP-HEGMAP3 with PID 303016 (E:\IdeaWorkspace\app-distribution\app-manager-admin\target\classes started by Administrator in E:\IdeaWorkspace\app-distribution)
+2019-11-20 16:21:35.804  INFO 303016 --- [main] com.cube.AdminApplication                : The following profiles are active: dev
+2019-11-20 16:21:36.860  INFO 303016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 16:21:36.863  INFO 303016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 16:21:36.896  INFO 303016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2019-11-20 16:21:37.164  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.cube.common.config.ShiroConfig$$EnhancerBySpringCGLIB$$47e027ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.278  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.283  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisPlusConfig' of type [com.cube.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$15334e08] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.288  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.293  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$976a88e3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.295  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$734e11bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.296  INFO 303016 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-11-20 16:21:37.355  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.919  INFO 303016 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-11-20 16:21:37.920  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:37.934  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlInjector' of type [com.baomidou.mybatisplus.extension.injector.LogicSqlInjector] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.360  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.365  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.366  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.368  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [com.sun.proxy.$Proxy69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.370  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.379  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.380  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.cube.modules.sys.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.389  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.744  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.796  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:38.853  INFO 303016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$59a21c49] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:21:39.254  INFO 303016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-20 16:21:39.277  INFO 303016 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-20 16:21:39.277  INFO 303016 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-11-20 16:21:39.397  INFO 303016 --- [main] o.a.c.c.C.[.[localhost].[/da-admin]      : Initializing Spring embedded WebApplicationContext
+2019-11-20 16:21:39.397  INFO 303016 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3514 ms
+2019-11-20 16:21:39.729  INFO 303016 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-11-20 16:21:39.743  INFO 303016 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-20 16:21:39.744  INFO 303016 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2019-11-20 16:21:39.750  INFO 303016 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2019-11-20 16:21:39.753  INFO 303016 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2019-11-20 16:21:39.753  INFO 303016 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'RenrenScheduler' with instanceId 'DESKTOP-HEGMAP31574238099731'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2019-11-20 16:21:39.754  INFO 303016 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'RenrenScheduler' initialized from an externally provided properties instance.
+2019-11-20 16:21:39.754  INFO 303016 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2019-11-20 16:21:39.755  INFO 303016 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7c3c3d67
+2019-11-20 16:21:41.166  INFO 303016 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-20 16:21:41.457  INFO 303016 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:21:41.553  INFO 303016 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-20 16:21:42.192  INFO 303016 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-11-20 16:21:42.207  INFO 303016 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-11-20 16:21:42.242  INFO 303016 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-11-20 16:21:42.254  INFO 303016 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Will start Quartz Scheduler [RenrenScheduler] in 30 seconds
+2019-11-20 16:21:42.340  INFO 303016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/da-admin'
+2019-11-20 16:21:42.343  INFO 303016 --- [main] com.cube.AdminApplication                : Started AdminApplication in 7.532 seconds (JVM running for 9.515)
+2019-11-20 16:21:54.114  INFO 303016 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1573788561] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-11-20 16:21:54.122  INFO 303016 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/da-admin]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-20 16:21:54.122  INFO 303016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-20 16:21:54.138  INFO 303016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2019-11-20 16:21:54.162  INFO 303016 --- [http-nio-8080-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2019-11-20 16:22:12.290  INFO 303016 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now, after delay of 30 seconds
+2019-11-20 16:22:12.299  INFO 303016 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: detected 1 failed or restarted instances.
+2019-11-20 16:22:12.299  INFO 303016 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: Scanning for instance "DESKTOP-HEGMAP31574237614192"'s failed in-progress jobs.
+2019-11-20 16:22:12.325  INFO 303016 --- [Quartz Scheduler [RenrenScheduler]] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238099731 started.
+2019-11-20 16:22:12.372  INFO 303016 --- [QuartzScheduler_RenrenScheduler-DESKTOP-HEGMAP31574238099731_MisfireHandler] o.s.s.quartz.LocalDataSourceJobStore     : Handling 1 trigger(s) that missed their scheduled fire-time.
+2019-11-20 16:23:00.409  INFO 303016 --- [QuartzScheduler_RenrenScheduler-DESKTOP-HEGMAP31574238099731_MisfireHandler] o.s.s.quartz.LocalDataSourceJobStore     : Handling 1 trigger(s) that missed their scheduled fire-time.
+2019-11-20 16:33:45.954  INFO 303016 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238099731 paused.
+2019-11-20 16:33:45.956  INFO 303016 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:33:45.971  INFO 303016 --- [Thread-16] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2019-11-20 16:33:45.973  INFO 303016 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238099731 shutting down.
+2019-11-20 16:33:45.973  INFO 303016 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238099731 paused.
+2019-11-20 16:33:45.975  INFO 303016 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238099731 shutdown complete.
+2019-11-20 16:33:45.976  INFO 303016 --- [Thread-16] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2019-11-20 16:33:46.001  INFO 303016 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-11-20 16:36:02.437  INFO 300548 --- [main] com.cube.AdminApplication                : Starting AdminApplication on DESKTOP-HEGMAP3 with PID 300548 (E:\IdeaWorkspace\app-distribution\app-manager-admin\target\classes started by Administrator in E:\IdeaWorkspace\app-distribution)
+2019-11-20 16:36:02.439  INFO 300548 --- [main] com.cube.AdminApplication                : The following profiles are active: dev
+2019-11-20 16:36:03.895  INFO 300548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 16:36:03.898  INFO 300548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 16:36:03.929  INFO 300548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-11-20 16:36:04.224  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.cube.common.config.ShiroConfig$$EnhancerBySpringCGLIB$$37c8e14b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:04.348  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:04.352  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisPlusConfig' of type [com.cube.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$51c07a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:04.369  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:04.374  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$87534282] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:04.376  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$6336cb5a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:04.378  INFO 300548 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-11-20 16:36:04.437  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.012  INFO 300548 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-11-20 16:36:05.013  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.026  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlInjector' of type [com.baomidou.mybatisplus.extension.injector.LogicSqlInjector] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.471  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.476  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.477  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.478  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [com.sun.proxy.$Proxy69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.481  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.481  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.481  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.cube.modules.sys.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.493  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.834  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.883  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:05.931  INFO 300548 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$498ad5e8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:36:06.351  INFO 300548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-20 16:36:06.374  INFO 300548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-20 16:36:06.374  INFO 300548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-11-20 16:36:06.514  INFO 300548 --- [main] o.a.c.c.C.[.[localhost].[/da-admin]      : Initializing Spring embedded WebApplicationContext
+2019-11-20 16:36:06.515  INFO 300548 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4025 ms
+2019-11-20 16:36:06.837  INFO 300548 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-11-20 16:36:06.852  INFO 300548 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-20 16:36:06.853  INFO 300548 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2019-11-20 16:36:06.860  INFO 300548 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2019-11-20 16:36:06.862  INFO 300548 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2019-11-20 16:36:06.862  INFO 300548 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'RenrenScheduler' with instanceId 'DESKTOP-HEGMAP31574238966841'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2019-11-20 16:36:06.863  INFO 300548 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'RenrenScheduler' initialized from an externally provided properties instance.
+2019-11-20 16:36:06.863  INFO 300548 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2019-11-20 16:36:06.864  INFO 300548 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@26270b77
+2019-11-20 16:36:08.064  INFO 300548 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-20 16:36:08.355  INFO 300548 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:36:08.449  INFO 300548 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-20 16:36:09.241  INFO 300548 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-11-20 16:36:09.263  INFO 300548 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-11-20 16:36:09.320  INFO 300548 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-11-20 16:36:09.338  INFO 300548 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Will start Quartz Scheduler [RenrenScheduler] in 30 seconds
+2019-11-20 16:36:09.450  INFO 300548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/da-admin'
+2019-11-20 16:36:09.454  INFO 300548 --- [main] com.cube.AdminApplication                : Started AdminApplication in 8.113 seconds (JVM running for 9.203)
+2019-11-20 16:36:39.345  INFO 300548 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now, after delay of 30 seconds
+2019-11-20 16:36:39.350  INFO 300548 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: detected 1 failed or restarted instances.
+2019-11-20 16:36:39.351  INFO 300548 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: Scanning for instance "DESKTOP-HEGMAP31574238099731"'s failed in-progress jobs.
+2019-11-20 16:36:39.357  INFO 300548 --- [Quartz Scheduler [RenrenScheduler]] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238966841 started.
+2019-11-20 16:36:39.361  INFO 300548 --- [QuartzScheduler_RenrenScheduler-DESKTOP-HEGMAP31574238966841_MisfireHandler] o.s.s.quartz.LocalDataSourceJobStore     : Handling 1 trigger(s) that missed their scheduled fire-time.
+2019-11-20 16:36:49.604  INFO 300548 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:00.883  INFO 300548 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:00.906  INFO 300548 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:00.921  INFO 300548 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:00.937  INFO 300548 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:05.008  INFO 300548 --- [RenrenScheduler_Worker-6] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:10.013  INFO 300548 --- [RenrenScheduler_Worker-7] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:15.008  INFO 300548 --- [RenrenScheduler_Worker-8] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:20.007  INFO 300548 --- [RenrenScheduler_Worker-9] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:25.007  INFO 300548 --- [RenrenScheduler_Worker-10] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:30.009  INFO 300548 --- [RenrenScheduler_Worker-11] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:43.264  INFO 300548 --- [RenrenScheduler_Worker-12] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:45.413  INFO 300548 --- [RenrenScheduler_Worker-13] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:46.954  INFO 300548 --- [RenrenScheduler_Worker-13] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:52.021  INFO 300548 --- [RenrenScheduler_Worker-14] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:37:53.482  INFO 300548 --- [RenrenScheduler_Worker-14] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:01.585  INFO 300548 --- [RenrenScheduler_Worker-15] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:01.587  INFO 300548 --- [RenrenScheduler_Worker-15] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:01.618  INFO 300548 --- [RenrenScheduler_Worker-16] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:01.618  INFO 300548 --- [RenrenScheduler_Worker-16] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:01.631  INFO 300548 --- [RenrenScheduler_Worker-17] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:01.631  INFO 300548 --- [RenrenScheduler_Worker-17] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:05.007  INFO 300548 --- [RenrenScheduler_Worker-18] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:05.007  INFO 300548 --- [RenrenScheduler_Worker-18] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:10.008  INFO 300548 --- [RenrenScheduler_Worker-19] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:10.008  INFO 300548 --- [RenrenScheduler_Worker-19] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:15.067  INFO 300548 --- [RenrenScheduler_Worker-20] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:21.557  INFO 300548 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:30.136  INFO 300548 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:30.156  INFO 300548 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:35.007  INFO 300548 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:40.007  INFO 300548 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:45.005  INFO 300548 --- [RenrenScheduler_Worker-6] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:50.007  INFO 300548 --- [RenrenScheduler_Worker-7] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:38:55.005  INFO 300548 --- [RenrenScheduler_Worker-8] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:39:00.006  INFO 300548 --- [RenrenScheduler_Worker-9] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:39:00.374  INFO 300548 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238966841 paused.
+2019-11-20 16:39:00.376  INFO 300548 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:39:00.395  INFO 300548 --- [Thread-16] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2019-11-20 16:39:00.396  INFO 300548 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238966841 shutting down.
+2019-11-20 16:39:00.396  INFO 300548 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238966841 paused.
+2019-11-20 16:39:00.397  INFO 300548 --- [Thread-16] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574238966841 shutdown complete.
+2019-11-20 16:39:00.403  INFO 300548 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-11-20 16:39:09.600  INFO 301928 --- [main] com.cube.AdminApplication                : Starting AdminApplication on DESKTOP-HEGMAP3 with PID 301928 (E:\IdeaWorkspace\app-distribution\app-manager-admin\target\classes started by Administrator in E:\IdeaWorkspace\app-distribution)
+2019-11-20 16:39:09.602  INFO 301928 --- [main] com.cube.AdminApplication                : The following profiles are active: dev
+2019-11-20 16:39:10.759  INFO 301928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 16:39:10.761  INFO 301928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 16:39:10.794  INFO 301928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-11-20 16:39:11.066  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.cube.common.config.ShiroConfig$$EnhancerBySpringCGLIB$$63473792] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.188  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.193  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisPlusConfig' of type [com.cube.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$309a5dee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.198  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.204  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$b2d198c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.206  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$8eb521a1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.208  INFO 301928 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-11-20 16:39:11.280  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.834  INFO 301928 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-11-20 16:39:11.834  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:11.850  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlInjector' of type [com.baomidou.mybatisplus.extension.injector.LogicSqlInjector] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.283  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.288  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.289  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.291  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [com.sun.proxy.$Proxy69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.293  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.294  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.294  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.cube.modules.sys.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.304  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.646  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.696  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:12.743  INFO 301928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$75092c2f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:39:13.157  INFO 301928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-20 16:39:13.178  INFO 301928 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-20 16:39:13.178  INFO 301928 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-11-20 16:39:13.330  INFO 301928 --- [main] o.a.c.c.C.[.[localhost].[/da-admin]      : Initializing Spring embedded WebApplicationContext
+2019-11-20 16:39:13.330  INFO 301928 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3621 ms
+2019-11-20 16:39:13.824  INFO 301928 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-11-20 16:39:13.841  INFO 301928 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-20 16:39:13.842  INFO 301928 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2019-11-20 16:39:13.851  INFO 301928 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2019-11-20 16:39:13.854  INFO 301928 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2019-11-20 16:39:13.856  INFO 301928 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'RenrenScheduler' with instanceId 'DESKTOP-HEGMAP31574239153828'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2019-11-20 16:39:13.856  INFO 301928 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'RenrenScheduler' initialized from an externally provided properties instance.
+2019-11-20 16:39:13.856  INFO 301928 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2019-11-20 16:39:13.858  INFO 301928 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7c8f047a
+2019-11-20 16:39:15.147  INFO 301928 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-20 16:39:15.420  INFO 301928 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:39:15.518  INFO 301928 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-20 16:39:16.248  INFO 301928 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-11-20 16:39:16.262  INFO 301928 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-11-20 16:39:16.297  INFO 301928 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-11-20 16:39:16.310  INFO 301928 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Will start Quartz Scheduler [RenrenScheduler] in 30 seconds
+2019-11-20 16:39:16.395  INFO 301928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/da-admin'
+2019-11-20 16:39:16.398  INFO 301928 --- [main] com.cube.AdminApplication                : Started AdminApplication in 7.736 seconds (JVM running for 9.484)
+2019-11-20 16:39:44.829  INFO 301928 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1573788561] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-11-20 16:39:44.837  INFO 301928 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/da-admin]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-20 16:39:44.837  INFO 301928 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-20 16:39:44.850  INFO 301928 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-11-20 16:39:44.868  INFO 301928 --- [http-nio-8080-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2019-11-20 16:39:46.311  INFO 301928 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now, after delay of 30 seconds
+2019-11-20 16:39:46.318  INFO 301928 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: detected 1 failed or restarted instances.
+2019-11-20 16:39:46.318  INFO 301928 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: Scanning for instance "DESKTOP-HEGMAP31574238966841"'s failed in-progress jobs.
+2019-11-20 16:39:46.372  INFO 301928 --- [Quartz Scheduler [RenrenScheduler]] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239153828 started.
+2019-11-20 16:39:46.382  INFO 301928 --- [QuartzScheduler_RenrenScheduler-DESKTOP-HEGMAP31574239153828_MisfireHandler] o.s.s.quartz.LocalDataSourceJobStore     : Handling 1 trigger(s) that missed their scheduled fire-time.
+2019-11-20 16:39:54.462  INFO 301928 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:39:59.784  INFO 301928 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:01.674  INFO 301928 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:05.008  INFO 301928 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:10.007  INFO 301928 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:15.007  INFO 301928 --- [RenrenScheduler_Worker-6] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:20.008  INFO 301928 --- [RenrenScheduler_Worker-7] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:25.007  INFO 301928 --- [RenrenScheduler_Worker-8] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:30.008  INFO 301928 --- [RenrenScheduler_Worker-9] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:35.008  INFO 301928 --- [RenrenScheduler_Worker-10] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:40.008  INFO 301928 --- [RenrenScheduler_Worker-11] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:45.006  INFO 301928 --- [RenrenScheduler_Worker-12] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:50.013  INFO 301928 --- [RenrenScheduler_Worker-13] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:40:55.007  INFO 301928 --- [RenrenScheduler_Worker-14] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:00.007  INFO 301928 --- [RenrenScheduler_Worker-15] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:05.007  INFO 301928 --- [RenrenScheduler_Worker-16] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:10.007  INFO 301928 --- [RenrenScheduler_Worker-17] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:15.006  INFO 301928 --- [RenrenScheduler_Worker-18] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:20.007  INFO 301928 --- [RenrenScheduler_Worker-19] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:25.007  INFO 301928 --- [RenrenScheduler_Worker-20] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:30.008  INFO 301928 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:35.012  INFO 301928 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:40.018  INFO 301928 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:45.007  INFO 301928 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:50.008  INFO 301928 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:41:55.007  INFO 301928 --- [RenrenScheduler_Worker-6] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:00.009  INFO 301928 --- [RenrenScheduler_Worker-7] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:05.006  INFO 301928 --- [RenrenScheduler_Worker-8] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:10.013  INFO 301928 --- [RenrenScheduler_Worker-9] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:15.005  INFO 301928 --- [RenrenScheduler_Worker-10] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:20.007  INFO 301928 --- [RenrenScheduler_Worker-11] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:25.005  INFO 301928 --- [RenrenScheduler_Worker-12] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:30.011  INFO 301928 --- [RenrenScheduler_Worker-13] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:35.285  INFO 301928 --- [RenrenScheduler_Worker-14] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:40.007  INFO 301928 --- [RenrenScheduler_Worker-15] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:45.007  INFO 301928 --- [RenrenScheduler_Worker-16] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:50.007  INFO 301928 --- [RenrenScheduler_Worker-17] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:42:55.005  INFO 301928 --- [RenrenScheduler_Worker-18] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:00.007  INFO 301928 --- [RenrenScheduler_Worker-19] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:05.009  INFO 301928 --- [RenrenScheduler_Worker-20] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:10.010  INFO 301928 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:15.012  INFO 301928 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:20.008  INFO 301928 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:25.005  INFO 301928 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:30.069  INFO 301928 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:35.008  INFO 301928 --- [RenrenScheduler_Worker-6] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:40.007  INFO 301928 --- [RenrenScheduler_Worker-7] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:45.006  INFO 301928 --- [RenrenScheduler_Worker-8] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:50.008  INFO 301928 --- [RenrenScheduler_Worker-9] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:43:55.007  INFO 301928 --- [RenrenScheduler_Worker-10] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:00.010  INFO 301928 --- [RenrenScheduler_Worker-11] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:05.028  INFO 301928 --- [RenrenScheduler_Worker-12] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:10.007  INFO 301928 --- [RenrenScheduler_Worker-13] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:15.010  INFO 301928 --- [RenrenScheduler_Worker-14] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:20.006  INFO 301928 --- [RenrenScheduler_Worker-15] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:25.007  INFO 301928 --- [RenrenScheduler_Worker-16] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:31.287  INFO 301928 --- [RenrenScheduler_Worker-17] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:35.010  INFO 301928 --- [RenrenScheduler_Worker-18] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:40.006  INFO 301928 --- [RenrenScheduler_Worker-19] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:45.006  INFO 301928 --- [RenrenScheduler_Worker-20] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:50.007  INFO 301928 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:44:55.006  INFO 301928 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:00.007  INFO 301928 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:05.226  INFO 301928 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:10.008  INFO 301928 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:15.018  INFO 301928 --- [RenrenScheduler_Worker-6] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:20.006  INFO 301928 --- [RenrenScheduler_Worker-7] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:25.327  INFO 301928 --- [RenrenScheduler_Worker-8] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:30.007  INFO 301928 --- [RenrenScheduler_Worker-9] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:35.007  INFO 301928 --- [RenrenScheduler_Worker-10] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:40.008  INFO 301928 --- [RenrenScheduler_Worker-11] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:45.008  INFO 301928 --- [RenrenScheduler_Worker-12] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:45:48.443  INFO 301928 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239153828 paused.
+2019-11-20 16:45:48.445  INFO 301928 --- [Thread-17] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:45:48.460  INFO 301928 --- [Thread-17] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2019-11-20 16:45:48.461  INFO 301928 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239153828 shutting down.
+2019-11-20 16:45:48.461  INFO 301928 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239153828 paused.
+2019-11-20 16:45:48.466  INFO 301928 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239153828 shutdown complete.
+2019-11-20 16:45:48.468  INFO 301928 --- [Thread-17] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2019-11-20 16:45:48.474  INFO 301928 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-11-20 16:45:55.186  INFO 304524 --- [main] com.cube.AdminApplication                : Starting AdminApplication on DESKTOP-HEGMAP3 with PID 304524 (E:\IdeaWorkspace\app-distribution\app-manager-admin\target\classes started by Administrator in E:\IdeaWorkspace\app-distribution)
+2019-11-20 16:45:55.188 DEBUG 304524 --- [main] com.cube.AdminApplication                : Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-11-20 16:45:55.188  INFO 304524 --- [main] com.cube.AdminApplication                : The following profiles are active: dev
+2019-11-20 16:45:56.364  INFO 304524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 16:45:56.367  INFO 304524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 16:45:56.400  INFO 304524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-11-20 16:45:56.665  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.cube.common.config.ShiroConfig$$EnhancerBySpringCGLIB$$5c4ff090] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:56.792  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:56.796  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisPlusConfig' of type [com.cube.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$29a316ec] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:56.802  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:56.807  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$abda51c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:56.809  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$87bdda9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:56.811  INFO 304524 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-11-20 16:45:56.876  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.452  INFO 304524 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-11-20 16:45:57.452  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.466  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlInjector' of type [com.baomidou.mybatisplus.extension.injector.LogicSqlInjector] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.903  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.908  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.909  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.910  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [com.sun.proxy.$Proxy69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.913  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.914  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.915  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.cube.modules.sys.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:57.924  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:58.269  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:58.319  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:58.362  INFO 304524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6e11e52d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:45:58.782  INFO 304524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-20 16:45:58.806  INFO 304524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-20 16:45:58.807  INFO 304524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-11-20 16:45:58.935  INFO 304524 --- [main] o.a.c.c.C.[.[localhost].[/da-admin]      : Initializing Spring embedded WebApplicationContext
+2019-11-20 16:45:58.936  INFO 304524 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3651 ms
+2019-11-20 16:45:59.243  INFO 304524 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-11-20 16:45:59.257  INFO 304524 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-20 16:45:59.258  INFO 304524 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2019-11-20 16:45:59.264  INFO 304524 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2019-11-20 16:45:59.265  INFO 304524 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2019-11-20 16:45:59.266  INFO 304524 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'RenrenScheduler' with instanceId 'DESKTOP-HEGMAP31574239559246'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2019-11-20 16:45:59.266  INFO 304524 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'RenrenScheduler' initialized from an externally provided properties instance.
+2019-11-20 16:45:59.266  INFO 304524 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2019-11-20 16:45:59.267  INFO 304524 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@33430fc
+2019-11-20 16:45:59.341 DEBUG 304524 --- [main] c.c.m.job.dao.ScheduleJobDao.selectList  : ==>  Preparing: SELECT job_id,bean_name,params,cron_expression,status,remark,create_time FROM schedule_job 
+2019-11-20 16:45:59.364 DEBUG 304524 --- [main] c.c.m.job.dao.ScheduleJobDao.selectList  : ==> Parameters: 
+2019-11-20 16:45:59.382 DEBUG 304524 --- [main] c.c.m.job.dao.ScheduleJobDao.selectList  : <==      Total: 1
+2019-11-20 16:46:00.503  INFO 304524 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-20 16:46:00.899  INFO 304524 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:46:01.036  INFO 304524 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-20 16:46:01.824  INFO 304524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-11-20 16:46:01.840  INFO 304524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-11-20 16:46:01.874  INFO 304524 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-11-20 16:46:01.885  INFO 304524 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Will start Quartz Scheduler [RenrenScheduler] in 30 seconds
+2019-11-20 16:46:01.972  INFO 304524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/da-admin'
+2019-11-20 16:46:01.975  INFO 304524 --- [main] com.cube.AdminApplication                : Started AdminApplication in 7.695 seconds (JVM running for 9.451)
+2019-11-20 16:46:31.888  INFO 304524 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now, after delay of 30 seconds
+2019-11-20 16:46:31.894  INFO 304524 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: detected 1 failed or restarted instances.
+2019-11-20 16:46:31.894  INFO 304524 --- [Quartz Scheduler [RenrenScheduler]] o.s.s.quartz.LocalDataSourceJobStore     : ClusterManager: Scanning for instance "DESKTOP-HEGMAP31574239153828"'s failed in-progress jobs.
+2019-11-20 16:46:31.902  INFO 304524 --- [Quartz Scheduler [RenrenScheduler]] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239559246 started.
+2019-11-20 16:46:31.906  INFO 304524 --- [QuartzScheduler_RenrenScheduler-DESKTOP-HEGMAP31574239559246_MisfireHandler] o.s.s.quartz.LocalDataSourceJobStore     : Handling 1 trigger(s) that missed their scheduled fire-time.
+2019-11-20 16:46:35.032 DEBUG 304524 --- [RenrenScheduler_Worker-1] com.cube.modules.job.utils.ScheduleJob   : 任务准备执行，任务ID：2
+2019-11-20 16:46:39.339  INFO 304524 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:40.523 DEBUG 304524 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:43.889 DEBUG 304524 --- [RenrenScheduler_Worker-1] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:45.260 DEBUG 304524 --- [RenrenScheduler_Worker-1] com.cube.modules.job.utils.ScheduleJob   : 任务执行完毕，任务ID：2  总共耗时：10228毫秒
+2019-11-20 16:46:45.264 DEBUG 304524 --- [RenrenScheduler_Worker-2] com.cube.modules.job.utils.ScheduleJob   : 任务准备执行，任务ID：2
+2019-11-20 16:46:47.072  INFO 304524 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:47.074 DEBUG 304524 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:47.074 DEBUG 304524 --- [RenrenScheduler_Worker-2] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:47.074 DEBUG 304524 --- [RenrenScheduler_Worker-2] com.cube.modules.job.utils.ScheduleJob   : 任务执行完毕，任务ID：2  总共耗时：1810毫秒
+2019-11-20 16:46:47.092 DEBUG 304524 --- [RenrenScheduler_Worker-1] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==>  Preparing: INSERT INTO schedule_job_log ( job_id, bean_name, params, status, times, create_time ) VALUES ( ?, ?, ?, ?, ?, ? ) 
+2019-11-20 16:46:47.092 DEBUG 304524 --- [RenrenScheduler_Worker-2] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==>  Preparing: INSERT INTO schedule_job_log ( job_id, bean_name, params, status, times, create_time ) VALUES ( ?, ?, ?, ?, ?, ? ) 
+2019-11-20 16:46:47.095 DEBUG 304524 --- [RenrenScheduler_Worker-1] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==> Parameters: 2(Long), testTask(String), renren(String), 0(Integer), 10228(Integer), 2019-11-20 16:46:35.032(Timestamp)
+2019-11-20 16:46:47.095 DEBUG 304524 --- [RenrenScheduler_Worker-2] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==> Parameters: 2(Long), testTask(String), renren(String), 0(Integer), 1810(Integer), 2019-11-20 16:46:45.264(Timestamp)
+2019-11-20 16:46:47.098 DEBUG 304524 --- [RenrenScheduler_Worker-3] com.cube.modules.job.utils.ScheduleJob   : 任务准备执行，任务ID：2
+2019-11-20 16:46:47.098  INFO 304524 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:47.099 DEBUG 304524 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:47.099 DEBUG 304524 --- [RenrenScheduler_Worker-3] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:47.099 DEBUG 304524 --- [RenrenScheduler_Worker-3] com.cube.modules.job.utils.ScheduleJob   : 任务执行完毕，任务ID：2  总共耗时：1毫秒
+2019-11-20 16:46:47.100 DEBUG 304524 --- [RenrenScheduler_Worker-2] c.c.m.job.dao.ScheduleJobLogDao.insert   : <==    Updates: 1
+2019-11-20 16:46:47.105 DEBUG 304524 --- [RenrenScheduler_Worker-1] c.c.m.job.dao.ScheduleJobLogDao.insert   : <==    Updates: 1
+2019-11-20 16:46:47.106 DEBUG 304524 --- [RenrenScheduler_Worker-3] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==>  Preparing: INSERT INTO schedule_job_log ( job_id, bean_name, params, status, times, create_time ) VALUES ( ?, ?, ?, ?, ?, ? ) 
+2019-11-20 16:46:47.108 DEBUG 304524 --- [RenrenScheduler_Worker-3] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==> Parameters: 2(Long), testTask(String), renren(String), 0(Integer), 1(Integer), 2019-11-20 16:46:47.098(Timestamp)
+2019-11-20 16:46:47.111 DEBUG 304524 --- [RenrenScheduler_Worker-3] c.c.m.job.dao.ScheduleJobLogDao.insert   : <==    Updates: 1
+2019-11-20 16:46:50.008 DEBUG 304524 --- [RenrenScheduler_Worker-4] com.cube.modules.job.utils.ScheduleJob   : 任务准备执行，任务ID：2
+2019-11-20 16:46:50.008  INFO 304524 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:50.009 DEBUG 304524 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:50.009 DEBUG 304524 --- [RenrenScheduler_Worker-4] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:50.009 DEBUG 304524 --- [RenrenScheduler_Worker-4] com.cube.modules.job.utils.ScheduleJob   : 任务执行完毕，任务ID：2  总共耗时：1毫秒
+2019-11-20 16:46:50.011 DEBUG 304524 --- [RenrenScheduler_Worker-4] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==>  Preparing: INSERT INTO schedule_job_log ( job_id, bean_name, params, status, times, create_time ) VALUES ( ?, ?, ?, ?, ?, ? ) 
+2019-11-20 16:46:50.011 DEBUG 304524 --- [RenrenScheduler_Worker-4] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==> Parameters: 2(Long), testTask(String), renren(String), 0(Integer), 1(Integer), 2019-11-20 16:46:50.008(Timestamp)
+2019-11-20 16:46:50.014 DEBUG 304524 --- [RenrenScheduler_Worker-4] c.c.m.job.dao.ScheduleJobLogDao.insert   : <==    Updates: 1
+2019-11-20 16:46:55.008 DEBUG 304524 --- [RenrenScheduler_Worker-5] com.cube.modules.job.utils.ScheduleJob   : 任务准备执行，任务ID：2
+2019-11-20 16:46:55.009  INFO 304524 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:55.009 DEBUG 304524 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:55.009 DEBUG 304524 --- [RenrenScheduler_Worker-5] com.cube.modules.job.task.TestTask       : TestTask定时任务正在执行，参数为：renren
+2019-11-20 16:46:55.009 DEBUG 304524 --- [RenrenScheduler_Worker-5] com.cube.modules.job.utils.ScheduleJob   : 任务执行完毕，任务ID：2  总共耗时：1毫秒
+2019-11-20 16:46:55.010 DEBUG 304524 --- [RenrenScheduler_Worker-5] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==>  Preparing: INSERT INTO schedule_job_log ( job_id, bean_name, params, status, times, create_time ) VALUES ( ?, ?, ?, ?, ?, ? ) 
+2019-11-20 16:46:55.011 DEBUG 304524 --- [RenrenScheduler_Worker-5] c.c.m.job.dao.ScheduleJobLogDao.insert   : ==> Parameters: 2(Long), testTask(String), renren(String), 0(Integer), 1(Integer), 2019-11-20 16:46:55.008(Timestamp)
+2019-11-20 16:46:55.015 DEBUG 304524 --- [RenrenScheduler_Worker-5] c.c.m.job.dao.ScheduleJobLogDao.insert   : <==    Updates: 1
+2019-11-20 16:46:55.396  INFO 304524 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239559246 paused.
+2019-11-20 16:46:55.399  INFO 304524 --- [Thread-17] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:46:55.417  INFO 304524 --- [Thread-17] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2019-11-20 16:46:55.418  INFO 304524 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239559246 shutting down.
+2019-11-20 16:46:55.418  INFO 304524 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239559246 paused.
+2019-11-20 16:46:55.419  INFO 304524 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239559246 shutdown complete.
+2019-11-20 16:46:55.433  INFO 304524 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-11-20 16:52:19.878  INFO 306100 --- [main] com.cube.AdminApplication                : Starting AdminApplication on DESKTOP-HEGMAP3 with PID 306100 (E:\IdeaWorkspace\app-distribution\app-manager-admin\target\classes started by Administrator in E:\IdeaWorkspace\app-distribution)
+2019-11-20 16:52:19.881 DEBUG 306100 --- [main] com.cube.AdminApplication                : Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-11-20 16:52:19.882  INFO 306100 --- [main] com.cube.AdminApplication                : The following profiles are active: dev
+2019-11-20 16:52:21.434  INFO 306100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 16:52:21.437  INFO 306100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 16:52:21.484  INFO 306100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces.
+2019-11-20 16:52:21.865  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.cube.common.config.ShiroConfig$$EnhancerBySpringCGLIB$$304b09fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.003  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.009  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisPlusConfig' of type [com.cube.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$fd9e3059] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.016  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.022  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$7fd56b34] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.024  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$5bb8f40c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.026  INFO 306100 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-11-20 16:52:22.085  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.641  INFO 306100 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-11-20 16:52:22.641  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:22.657  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlInjector' of type [com.baomidou.mybatisplus.extension.injector.LogicSqlInjector] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.075  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.081  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.082  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.084  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserDao' of type [com.sun.proxy.$Proxy69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.087  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.088  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sysMenuDao' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.088  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.cube.modules.sys.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.102  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.444  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.491  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.537  INFO 306100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$420cfe9a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:52:23.989  INFO 306100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-20 16:52:24.014  INFO 306100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-20 16:52:24.014  INFO 306100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-11-20 16:52:24.157  INFO 306100 --- [main] o.a.c.c.C.[.[localhost].[/da-admin]      : Initializing Spring embedded WebApplicationContext
+2019-11-20 16:52:24.158  INFO 306100 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4215 ms
+2019-11-20 16:52:24.472  INFO 306100 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-11-20 16:52:24.486  INFO 306100 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-20 16:52:24.487  INFO 306100 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2019-11-20 16:52:24.494  INFO 306100 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2019-11-20 16:52:24.495  INFO 306100 --- [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2019-11-20 16:52:24.496  INFO 306100 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'RenrenScheduler' with instanceId 'DESKTOP-HEGMAP31574239944475'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2019-11-20 16:52:24.496  INFO 306100 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'RenrenScheduler' initialized from an externally provided properties instance.
+2019-11-20 16:52:24.496  INFO 306100 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2019-11-20 16:52:24.497  INFO 306100 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@131c0b6f
+2019-11-20 16:52:24.570 DEBUG 306100 --- [main] c.c.m.job.dao.ScheduleJobDao.selectList  : ==>  Preparing: SELECT job_id,bean_name,params,cron_expression,status,remark,create_time FROM schedule_job 
+2019-11-20 16:52:24.592 DEBUG 306100 --- [main] c.c.m.job.dao.ScheduleJobDao.selectList  : ==> Parameters: 
+2019-11-20 16:52:24.611 DEBUG 306100 --- [main] c.c.m.job.dao.ScheduleJobDao.selectList  : <==      Total: 1
+2019-11-20 16:52:25.714  INFO 306100 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-20 16:52:26.004  INFO 306100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:52:26.105  INFO 306100 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-20 16:52:26.747  INFO 306100 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-11-20 16:52:26.768  INFO 306100 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-11-20 16:52:26.835  INFO 306100 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-11-20 16:52:26.850  INFO 306100 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Will start Quartz Scheduler [RenrenScheduler] in 30 seconds
+2019-11-20 16:52:26.978  INFO 306100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/da-admin'
+2019-11-20 16:52:26.981  INFO 306100 --- [main] com.cube.AdminApplication                : Started AdminApplication in 7.858 seconds (JVM running for 9.013)
+2019-11-20 16:52:33.346  INFO 306100 --- [Thread-17] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:52:33.363  INFO 306100 --- [Thread-17] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2019-11-20 16:52:33.364  INFO 306100 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239944475 shutting down.
+2019-11-20 16:52:33.364  INFO 306100 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239944475 paused.
+2019-11-20 16:52:33.365  INFO 306100 --- [Thread-17] org.quartz.core.QuartzScheduler          : Scheduler RenrenScheduler_$_DESKTOP-HEGMAP31574239944475 shutdown complete.
+2019-11-20 16:52:33.370  INFO 306100 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

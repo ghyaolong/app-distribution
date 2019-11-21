@@ -1781,10 +1781,10 @@ window.Docs = {
         // Per https://github.com/es-shims/es5-shim/issues/295
         // Safari 7/8 breaks with sparse arrays of size 1e5 or greater
         var arr = new $Array(1e5);
-        // note: the index MUST be 8 or larger or the test will false pass
+        // note: the index MUST be 8 or larger or the main will false pass
         arr[8] = 'x';
         arr.splice(1, 1);
-        // note: this test must be defined *after* the indexOf shim
+        // note: this main must be defined *after* the indexOf shim
         // per https://github.com/es-shims/es5-shim/issues/313
         return arr.indexOf('x') === 7;
     }());
@@ -3001,7 +3001,7 @@ window.Docs = {
         }(parseFloat));
     }
 
-    if (String(new RangeError('test')) !== 'RangeError: test') {
+    if (String(new RangeError('test')) !== 'RangeError: main') {
         var errorToStringShim = function toString() {
             if (typeof this === 'undefined' || this === null) {
                 throw new TypeError("can't convert " + this + ' to object');
@@ -10372,7 +10372,7 @@ function isPrintable(c) {
       ||  (0x10000 <= c && c <= 0x10FFFF);
 }
 
-// Simplified test for values allowed after the first character in plain style.
+// Simplified main for values allowed after the first character in plain style.
 function isPlainSafe(c) {
   // Uses a subset of nb-char - c-flow-indicator - ":" - "#"
   // where nb-char ::= c-printable - b-char - c-byte-order-mark.
@@ -10388,7 +10388,7 @@ function isPlainSafe(c) {
     && c !== CHAR_SHARP;
 }
 
-// Simplified test for values allowed as the first character in plain style.
+// Simplified main for values allowed as the first character in plain style.
 function isPlainSafeFirst(c) {
   // Uses a subset of ns-char - c-indicator
   // where ns-char = nb-char - s-white.
@@ -11410,7 +11410,7 @@ function testDocumentSeparator(state) {
   ch = state.input.charCodeAt(_position);
 
   // Condition state.position === state.lineStart is tested
-  // in parent on each call, for efficiency. No needs to test here again.
+  // in parent on each call, for efficiency. No needs to main here again.
   if ((ch === 0x2D/* - */ || ch === 0x2E/* . */) &&
       ch === state.input.charCodeAt(_position + 1) &&
       ch === state.input.charCodeAt(_position + 2)) {
@@ -18295,7 +18295,7 @@ var nextTick =(function () {
         process.toString() === "[object process]" && process.nextTick) {
         // Ensure Q is in a real Node environment, with a `process.nextTick`.
         // To see through fake Node environments:
-        // * Mocha test runner - exposes a `process` global without a `nextTick`
+        // * Mocha main runner - exposes a `process` global without a `nextTick`
         // * Browserify - exposes a `process.nexTick` function that uses
         //   `setTimeout`. In this case `setImmediate` is preferred because
         //    it is faster. Browserify's `process.toString()` yields

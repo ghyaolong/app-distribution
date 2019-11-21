@@ -3,7 +3,9 @@ package com.cube.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cube.common.utils.PageUtils;
 import com.cube.entity.AppEntity;
+import com.cube.vo.AppVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,7 @@ import java.util.Map;
 public interface AppService extends IService<AppEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    List<AppVo> findAll(String memberId);
 }
 

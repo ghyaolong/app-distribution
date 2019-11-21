@@ -6,11 +6,11 @@ server:
     min-spare-threads: 30
   port: 8081
   servlet:
-    context-path: /renren-api
+    context-path: /app-api
 
 # mysql
 spring:
-  # 环境 dev|test|prod
+  # 环境 dev|main|prod
   profiles:
     active: dev
   servlet:
@@ -59,5 +59,6 @@ mybatis-plus:
     cache-enabled: false
     call-setters-on-nulls: true
     jdbc-type-for-null: 'null'
+
 
 

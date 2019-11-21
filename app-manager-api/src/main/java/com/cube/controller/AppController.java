@@ -34,7 +34,6 @@ public class AppController {
      * 列表
      */
     @RequestMapping("/list")
-
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = appService.queryPage(params);
 

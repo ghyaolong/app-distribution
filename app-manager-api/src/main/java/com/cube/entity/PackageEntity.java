@@ -31,7 +31,7 @@ public class PackageEntity implements Serializable {
 	/**
 	 *
 	 */
-	private String bundleid;
+	private String bundleId;
 	/**
 	 *
 	 */
@@ -76,5 +76,10 @@ public class PackageEntity implements Serializable {
 	 * 更新日志
 	 */
 	private String changeLog;
+
+	/**
+	 * appId
+	 */
+	private String appId;
 
 }

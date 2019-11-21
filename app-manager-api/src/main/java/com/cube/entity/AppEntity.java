@@ -27,7 +27,7 @@ public class AppEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private String bundleid;
+	private String bundleId;
 	/**
 	 * 
 	 */
@@ -51,7 +51,7 @@ public class AppEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private String currentid;
+	private String currentId;
 	/**
 	 * 会员id
 	 */

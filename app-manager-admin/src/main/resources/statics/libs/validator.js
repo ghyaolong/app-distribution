@@ -278,7 +278,7 @@ function isIP(str) {
     }
 
     for (var i = 0; i < blocks.length; ++i) {
-      // test for a :: which can not be at the string start/end
+      // main for a :: which can not be at the string start/end
       // since those cases have been handled above
       if (blocks[i] === '' && i > 0 && i < blocks.length - 1) {
         if (foundOmissionBlock) {

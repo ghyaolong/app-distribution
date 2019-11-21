@@ -927,7 +927,7 @@ CREATE TABLE `sys_log` (
 -- Records of sys_log
 -- ----------------------------
 INSERT INTO `sys_log` VALUES ('1', 'admin', '保存角色', 'io.renren.modules.sys.controller.SysRoleController.save()', '{\"roleId\":1,\"roleName\":\"代理\",\"deptId\":4,\"deptName\":\"技术部\",\"menuIdList\":[1,2,15,16,17,18],\"deptIdList\":[],\"createTime\":\"Nov 20, 2019 2:55:04 PM\"}', '45', '0:0:0:0:0:0:0:1', '2019-11-20 14:55:05');
-INSERT INTO `sys_log` VALUES ('2', 'admin', '保存用户', 'io.renren.modules.sys.controller.SysUserController.save()', '{\"userId\":2,\"username\":\"test\",\"password\":\"81ef1f3342c66c0f427976a233d50fb98c6ce24eaef1b0dc77311c75d171fe91\",\"salt\":\"2IzBHY7PrqaOHbBDdpES\",\"email\":\"test@qq.com\",\"status\":1,\"roleIdList\":[1],\"createTime\":\"Nov 20, 2019 2:55:31 PM\",\"deptId\":4,\"deptName\":\"技术部\"}', '80', '0:0:0:0:0:0:0:1', '2019-11-20 14:55:32');
+INSERT INTO `sys_log` VALUES ('2', 'admin', '保存用户', 'io.renren.modules.sys.controller.SysUserController.save()', '{\"userId\":2,\"username\":\"main\",\"password\":\"81ef1f3342c66c0f427976a233d50fb98c6ce24eaef1b0dc77311c75d171fe91\",\"salt\":\"2IzBHY7PrqaOHbBDdpES\",\"email\":\"main@qq.com\",\"status\":1,\"roleIdList\":[1],\"createTime\":\"Nov 20, 2019 2:55:31 PM\",\"deptId\":4,\"deptName\":\"技术部\"}', '80', '0:0:0:0:0:0:0:1', '2019-11-20 14:55:32');
 INSERT INTO `sys_log` VALUES ('3', 'admin', '修改定时任务', 'com.cube.modules.job.controller.ScheduleJobController.update()', '{\"jobId\":1,\"beanName\":\"testTask\",\"params\":\"renren\",\"cronExpression\":\"*/30 * * * * ?\",\"status\":0,\"remark\":\"参数测试\",\"createTime\":\"Nov 20, 2019 2:37:04 PM\"}', '172', '0:0:0:0:0:0:0:1', '2019-11-20 16:08:31');
 INSERT INTO `sys_log` VALUES ('4', 'admin', '暂停定时任务', 'com.cube.modules.job.controller.ScheduleJobController.pause()', '[1]', '20', '0:0:0:0:0:0:0:1', '2019-11-20 16:08:37');
 INSERT INTO `sys_log` VALUES ('5', 'admin', '修改定时任务', 'com.cube.modules.job.controller.ScheduleJobController.update()', '{\"jobId\":1,\"beanName\":\"testTask\",\"params\":\"renren\",\"cronExpression\":\"*/30 * * * * ?\",\"status\":1,\"remark\":\"参数测试\",\"createTime\":\"Nov 20, 2019 2:37:04 PM\"}', '17611', '0:0:0:0:0:0:0:1', '2019-11-20 16:10:15');
@@ -1087,7 +1087,7 @@ CREATE TABLE `sys_user` (
 -- Records of sys_user
 -- ----------------------------
 INSERT INTO `sys_user` VALUES ('1', 'admin', 'e1153123d7d180ceeb820d577ff119876678732a68eef4e6ffc0b1f06a01f91b', 'YzcmCZNvbXocrsz9dm8e', 'root@renren.io', '13612345678', '1', '1', '2016-11-11 11:11:11');
-INSERT INTO `sys_user` VALUES ('2', 'test', '81ef1f3342c66c0f427976a233d50fb98c6ce24eaef1b0dc77311c75d171fe91', '2IzBHY7PrqaOHbBDdpES', 'test@qq.com', null, '1', '4', '2019-11-20 14:55:32');
+INSERT INTO `sys_user` VALUES ('2', 'main', '81ef1f3342c66c0f427976a233d50fb98c6ce24eaef1b0dc77311c75d171fe91', '2IzBHY7PrqaOHbBDdpES', 'main@qq.com', null, '1', '4', '2019-11-20 14:55:32');
 
 -- ----------------------------
 -- Table structure for sys_user_role

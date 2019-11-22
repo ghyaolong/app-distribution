@@ -35,7 +35,7 @@ public class PackageEntity implements Serializable {
 	/**
 	 *
 	 */
-	private Date createTime;
+	private Long createTime;
 	/**
 	 *
 	 */

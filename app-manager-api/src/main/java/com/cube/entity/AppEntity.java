@@ -31,7 +31,7 @@ public class AppEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private Date createTime;
+	private Long createTime;
 	/**
 	 * 
 	 */

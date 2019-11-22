@@ -51,7 +51,7 @@ public class ProvisionEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private String teamid;
+	private String teamId;
 	/**
 	 * 
 	 */

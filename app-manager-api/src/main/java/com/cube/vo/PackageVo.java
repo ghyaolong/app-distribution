@@ -2,8 +2,6 @@ package com.cube.vo;
 
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
 public class PackageVo {
 
@@ -19,7 +17,7 @@ public class PackageVo {
     /**
      *
      */
-    private Date createTime;
+    private Long createTime;
     /**
      *
      */
@@ -65,4 +63,6 @@ public class PackageVo {
      * appId
      */
     private String appId;
+
+    private ProvisionVo provisionVo;
 }

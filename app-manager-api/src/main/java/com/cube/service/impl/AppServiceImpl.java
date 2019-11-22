@@ -2,16 +2,18 @@ package com.cube.service.impl;
 
 import com.cube.entity.PackageEntity;
 import com.cube.service.PackageService;
+import com.cube.utils.CodeGenerator;
+import com.cube.utils.IDGenerator;
 import com.cube.utils.MyBeanUtils;
 import com.cube.vo.AppVo;
 import com.cube.vo.PackageVo;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -57,6 +59,45 @@ public class AppServiceImpl extends ServiceImpl<AppDao, AppEntity> implements Ap
             }
         }
         return appVos;
+    }
+
+    @Override
+    public AppVo saveByPackage(PackageVo aPackage) {
+        //App app = this.appDao.get(aPackage.getBundleId(), aPackage.getPlatform());
+        AppEntity appEntity = this.baseMapper.selectOne(new QueryWrapper<AppEntity>().lambda().eq(AppEntity::getBundleId, aPackage.getBundleId()).eq(AppEntity::getPlatform, aPackage.getPlatform()));
+        if(appEntity==null){
+            appEntity = new AppEntity();
+            String shortCode = CodeGenerator.generate(6);
+            AppEntity isShortCode = this.baseMapper.selectOne(new QueryWrapper<AppEntity>().lambda().eq(AppEntity::getShortCode, shortCode));
+            while (isShortCode != null) {
+                shortCode = CodeGenerator.generate(6);
+            }
+            String packageID = IDGenerator.getUUID();
+            BeanUtils.copyProperties(aPackage, appEntity);
+            appEntity.setShortCode(shortCode);
+            appEntity.setCurrentId(packageID);
+            //保存app
+            this.baseMapper.insert(appEntity);
+
+            //保存package
+            aPackage.setId(packageID);
+            aPackage.setAppId(appEntity.getId());
+            PackageEntity packageEntity = MyBeanUtils.copy(aPackage, PackageEntity.class);
+            packageService.save(packageEntity);
+            System.out.println(packageEntity.getCreateTime());
+
+        }else{
+            //保存package
+            aPackage.setAppId(appEntity.getId());
+            PackageEntity packageEntity = MyBeanUtils.copy(aPackage, PackageEntity.class);
+            packageService.save(packageEntity);
+
+            appEntity.setCurrentId(packageEntity.getId());
+            appEntity.setName(aPackage.getName());
+            this.baseMapper.updateById(appEntity);
+        }
+
+        return MyBeanUtils.copy(appEntity,AppVo.class);
     }
 
 }

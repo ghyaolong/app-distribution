@@ -36,7 +36,6 @@ public class AppController {
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = appService.queryPage(params);
-
         return R.ok().put("page", page);
     }
 

@@ -3,6 +3,7 @@ package com.cube.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cube.common.utils.PageUtils;
 import com.cube.entity.PackageEntity;
+import com.cube.vo.PackageVo;
 
 import java.util.Map;
 
@@ -16,5 +17,7 @@ import java.util.Map;
 public interface PackageService extends IService<PackageEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    PackageVo buildPackage(String filePath);
 }
 

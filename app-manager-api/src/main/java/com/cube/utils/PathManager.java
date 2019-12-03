@@ -42,8 +42,8 @@ public class PathManager {
             if (domain == null) {
                 domain = address.getHostAddress();
             }
-            int httpPort = Integer.parseInt(environment.getProperty("server.http.port"));
-            int httpsPort = Integer.parseInt(environment.getProperty("server.port"));
+            int httpsPort = Integer.parseInt(environment.getProperty("server.http.port"));
+            int httpPort = Integer.parseInt(environment.getProperty("server.port"));
             int port = isHttps ? httpsPort : httpPort;
             String protocol = isHttps ? "https" : "http";
             String portString = ":" + port;
@@ -51,7 +51,7 @@ public class PathManager {
                 portString = "";
             }
 
-            String baseURL = protocol + "://" + domain + portString + "/";
+            String baseURL = protocol + "://" + domain + portString +environment.getProperty("server.servlet.context-path")+"/";
 
             //解决重复读配置文件
             if (isHttps) {
@@ -73,7 +73,7 @@ public class PathManager {
      * @param isHttps
      * @return
      */
-    public String getPackageResourceURL(PackageEntity aPackage, boolean isHttps) {
+    public String getPackageResourceURL(PackageVo aPackage, boolean isHttps) {
         String baseURL = getBaseURL(isHttps);
         String resourceURL = baseURL + aPackage.getPlatform() + "/" + aPackage.getBundleId() + "/" + aPackage.getCreateTime() + "/";
         return resourceURL;
@@ -116,6 +116,26 @@ public class PathManager {
 
             //如果上传目录为/static/upload/，则可以如下获取：
             File upload = new File(path.getAbsolutePath(),"static/upload/");
+            if(!upload.exists()) upload.mkdirs();
+            return upload.getPath();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取上传路径
+     * @return
+     */
+    public static String getUploadPath(String dist) {
+        try {
+            //获取跟目录
+            File path = new File(ResourceUtils.getURL("classpath:").getPath());
+            if(!path.exists()) path = new File("");
+
+            //如果上传目录为/static/upload/，则可以如下获取：
+            File upload = new File(path.getAbsolutePath(),"static/upload/"+dist);
             if(!upload.exists()) upload.mkdirs();
             return upload.getPath();
         } catch (Exception e) {

@@ -24,7 +24,7 @@ import java.util.Date;
  * @author Mark sunlightcs@gmail.com
  */
 @Data
-@TableName("tb_token")
+@TableName("da_token")
 public class TokenEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -32,7 +32,7 @@ public class TokenEntity implements Serializable {
 	 * 用户ID
 	 */
 	@TableId(type= IdType.INPUT)
-	private Long userId;
+	private String userId;
 	private String token;
 	/**
 	 * 过期时间

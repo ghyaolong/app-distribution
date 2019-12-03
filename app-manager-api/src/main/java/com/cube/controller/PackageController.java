@@ -1,38 +1,39 @@
 package com.cube.controller;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.cube.annotation.Login;
+import com.cube.entity.AppEntity;
+import com.cube.entity.MemberEntity;
+import com.cube.entity.PackageEntity;
+import com.cube.entity.ProvisionEntity;
 import com.cube.service.AppService;
+import com.cube.service.MemberService;
+import com.cube.service.PackageService;
+import com.cube.service.ProvisionService;
 import com.cube.utils.MyBeanUtils;
 import com.cube.utils.PathManager;
 import com.cube.utils.Result;
 import com.cube.utils.ResultUtils;
+import com.cube.utils.ipa.PlistGenerator;
 import com.cube.vo.AppVo;
 import com.cube.vo.PackageVo;
 import lombok.extern.slf4j.Slf4j;
+import net.glxn.qrgen.javase.QRCode;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
-import com.cube.entity.PackageEntity;
-import com.cube.service.PackageService;
-import com.cube.common.utils.PageUtils;
-import com.cube.common.utils.R;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URLEncoder;
+import java.util.*;
 
 
 /**
@@ -55,56 +56,156 @@ public class PackageController {
     @Resource
     private PathManager pathManager;
 
+    @Autowired
+    private ProvisionService provisionService;
+
+    @Autowired
+    private MemberService memberService;
+
+
     /**
-     * 列表
+     * 预览页
+     * @param code
+     * @return
      */
-    @RequestMapping("/list")
+    @GetMapping("/s/{code}")
+    public Result get(@PathVariable("code") String code, String packageId) {
 
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = packageService.queryPage(params);
+        AppEntity appEntity = appService.getOne(new QueryWrapper<AppEntity>().lambda().eq(AppEntity::getShortCode, code));
 
-        return R.ok().put("page", page);
+        AppVo appVo = MyBeanUtils.copy(appEntity, AppVo.class);
+
+
+        PackageEntity packageEntity = packageService.getById(packageId);
+        PackageVo packageVo = MyBeanUtils.copy(packageEntity, PackageVo.class);
+        appVo.setVersion(packageVo.getVersion());
+        appVo.setBuildVersion(packageVo.getBuildVersion());
+        appVo.setInstallPath(pathManager.getBaseURL(false) + "s/" + appVo.getShortCode());
+        appVo.setMinVersion(appVo.getMinVersion());
+        appVo.setCurrentPackage(additionToPackage(packageVo, pathManager));
+        appVo.setIcon(PathManager.getRelativePath(appVo.getCurrentPackage()) + "icon.png");
+
+        appVo.setCaPath(this.pathManager.getCAPath());
+        appVo.setBasePath(this.pathManager.getBaseURL(false));
+        return ResultUtils.ok(appVo);
+    }
+
+    private PackageVo additionToPackage(PackageVo aPackage,PathManager pathManager){
+        AppEntity appEntity = appService.getById(aPackage.getAppId());
+
+        aPackage.setDownloadURL(pathManager.getBaseURL(false) + "p/" + aPackage.getId());
+        aPackage.setSafeDownloadURL(pathManager.getBaseURL(true) + "p/" + aPackage.getId());
+        aPackage.setIconURL(pathManager.getPackageResourceURL(aPackage, true) + "icon.png");
+        aPackage.setDisplaySize(String.format("%.2f MB", aPackage.getSize() / (1.0F * FileUtils.ONE_MB)));
+        Date updateTime = new Date(aPackage.getCreateTime());
+        String displayTime = (new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(updateTime);
+        aPackage.setDisplayTime(displayTime);
+
+        if("ios".equalsIgnoreCase(aPackage.getPlatform())){
+            aPackage.setIOS(true);
+            String url = pathManager.getBaseURL(true) + "m/" + aPackage.getId();
+            try {
+                aPackage.setInstallURL("itms-services://?action=download-manifest&url=" + URLEncoder.encode(url, "utf-8"));
+            }catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }else{
+            aPackage.setIOS(false);
+            aPackage.setInstallURL(pathManager.getPackageResourceURL(aPackage, false) + aPackage.getFileName());
+        }
+        aPackage.setPreviewURL(pathManager.getBaseURL(false) + "s/" + appEntity.getShortCode() + "?id=" + aPackage.getId());
+
+        if(aPackage.getIOS()){
+            if(StringUtils.isEmpty(aPackage.getProvisionId())){
+                aPackage.setType("内测版");
+            }else{
+                ProvisionEntity provisionEntity = provisionService.getById(aPackage.getProvisionId());
+                if(provisionEntity!=null){
+                    if(provisionEntity.getIsEnterprise()){
+                        aPackage.setType("企业版");
+                    }else{
+                        if ("AdHoc".equalsIgnoreCase(provisionEntity.getType())) {
+                            aPackage.setType("内测版");
+                        } else {
+                            aPackage.setType("商店版");
+                        }
+                        aPackage.setDeviceCount(provisionEntity.getDeviceCount());
+                        aPackage.setDevices(Arrays.asList(provisionEntity.getDevices()));
+                    }
+                }
+
+            }
+        }else{
+            aPackage.setType("内测版");
+        }
+        return aPackage;
     }
 
 
     /**
-     * 信息
+     * 设备列表
+     * @return
      */
-    @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") String id){
-        PackageEntity pck = packageService.getById(id);
-
-        return R.ok().put("package", pck);
+    @GetMapping("/devices/{packageId}")
+    public Result devices(@PathVariable("packageId") String packageId) {
+        PackageEntity packageEntity = packageService.getById(packageId);
+        PackageVo packageVo = MyBeanUtils.copy(packageEntity, PackageVo.class);
+        additionToPackage(packageVo, pathManager);
+        return ResultUtils.ok(packageVo);
     }
 
     /**
-     * 保存
+     * 获取 manifest
+     * @param packageId
+     * @param response
      */
-    @RequestMapping("/save")
-    public R save(@RequestBody PackageEntity pck){
-        packageService.save(pck);
+    @RequestMapping("/m/{packageId}")
+    public void getManifest(@PathVariable("packageId") String packageId, HttpServletResponse response) {
+        try {
+            PackageEntity packageEntity = packageService.getById(packageId);
+            PackageVo packageVo = MyBeanUtils.copy(packageEntity, PackageVo.class);
+            AppEntity appEntity = appService.getById(packageVo.getAppId());
+            if (packageEntity != null && "ios".equalsIgnoreCase(appEntity.getPlatform())) {
+                response.setContentType("application/force-download");
+                response.setHeader("Content-Disposition", "attachment;fileName=manifest.plist");
+                Writer writer = new OutputStreamWriter(response.getOutputStream());
+                additionToPackage(packageVo, pathManager);
+                PlistGenerator.generate(packageVo, writer);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-        return R.ok();
+
+    /**
+     * 获取包二维码
+     * @param packageId
+     */
+    @RequestMapping("/code/{packageId}")
+    public void getQrCode(@PathVariable("packageId") String packageId, HttpServletResponse response) {
+        try {
+            PackageEntity packageEntity = packageService.getById(packageId);
+            PackageVo packageVo = MyBeanUtils.copy(packageEntity, PackageVo.class);
+            additionToPackage(packageVo,pathManager);
+            if (packageEntity != null) {
+                response.setContentType("image/png");
+                QRCode.from(packageVo.getPreviewURL()).withSize(250, 250).writeTo(response.getOutputStream());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
-     * 修改
+     * 删除包
+     * @param packageId
+     * @return
      */
-    @RequestMapping("/update")
-    public R update(@RequestBody PackageEntity pck){
-        packageService.updateById(pck);
-        
-        return R.ok();
-    }
-
-    /**
-     * 删除
-     */
-    @RequestMapping("/delete")
-    public R delete(@RequestBody String[] ids){
-        packageService.removeByIds(Arrays.asList(ids));
-
-        return R.ok();
+    @DeleteMapping("/delete/{packageId}")
+    public Result deleteById(@PathVariable("packageId") String packageId) {
+        packageService.removeById(packageId);
+        return ResultUtils.okMsg("删除成功");
     }
 
 
@@ -138,7 +239,7 @@ public class PackageController {
 //            aPackage.setApp(app);
 //            app = this.appService.save(app);
             // URL
-            String codeURL = this.pathManager.getBaseURL(false) + "p/code/" + app.getCurrentId();
+            String codeURL = this.pathManager.getBaseURL(false) + "cube/package/code/" + app.getCurrentId();
             // 发送WebHook消息
             //WebHookClient.sendMessage(app, pathManager);
             return ResultUtils.ok(codeURL);
@@ -164,6 +265,28 @@ public class PackageController {
             String path = PathManager.getFullPath(aPackage) + aPackage.getFileName();
             File file = new File(path);
             if(file.exists()){ //判断文件父目录是否存在
+
+                /**
+                 * 下载次数-1
+                 */
+                AppEntity appEntity = appService.getById(packageEntity.getAppId());
+                String memberId = appEntity.getMemberId();
+                synchronized (this){
+                    MemberEntity memberEntity = memberService.getById(memberId);
+                    if(memberEntity.getDownloadCount()<=0){
+                        return;
+                    }
+
+                    if(memberEntity.getDownloadCount()<=1000){
+                        //todoycl 是否需要给用户添加次数阈值通知
+                    }
+
+
+                    boolean update = memberService.update(new UpdateWrapper<MemberEntity>().lambda().setSql(" download_count = download_count -1 "));
+                    log.info("用户userId={}下载次数已扣减，剩余{}次数",memberId,(memberEntity.getDownloadCount()-1));
+                }
+
+
                 response.setContentType("application/force-download");
                 // 文件名称转换
                 String fileName = aPackage.getName() + "_" + aPackage.getVersion();

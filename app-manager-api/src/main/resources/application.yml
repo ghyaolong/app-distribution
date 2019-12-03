@@ -4,10 +4,10 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
-  port: 8080
+  port: 8080  #http端口
   servlet:
     context-path: /app-api
-  http:
+  http:  #https 端口
     port: 8082
 
 # mysql
@@ -36,6 +36,15 @@ spring:
 renren:
   redis:
     open: false  # 是否开启redis缓存  true开启   false关闭
+
+config:
+  jwt:
+    secret: abcdefg1234567
+    #token有效时长
+    exprie: 3600
+    #header名称
+    header: token
+
 
 
 #mybatis

@@ -1,5 +1,8 @@
 package com.cube.utils;
 
+
+import org.apache.commons.lang.RandomStringUtils;
+
 import java.util.Random;
 
 public class CodeGenerator {
@@ -23,6 +26,16 @@ public class CodeGenerator {
         int count = ALL_CODE.length();
         int index = random.nextInt(count) % count;
         return ALL_CODE.charAt(index);
+    }
+
+
+    public static String phoneCode(int length){
+        String s = RandomStringUtils.randomNumeric(length);
+        return s;
+    }
+
+    public static void main(String[] args) {
+        CodeGenerator.phoneCode(6);
     }
 }
 

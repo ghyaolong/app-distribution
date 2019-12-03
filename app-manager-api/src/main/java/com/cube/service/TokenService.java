@@ -10,6 +10,7 @@ package com.cube.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cube.entity.TokenEntity;
+import com.cube.vo.MemberVo;
 
 /**
  * 用户Token
@@ -22,15 +23,15 @@ public interface TokenService extends IService<TokenEntity> {
 
 	/**
 	 * 生成token
-	 * @param userId  用户ID
+	 * @param memberVo  用户ID
 	 * @return        返回token信息
 	 */
-	TokenEntity createToken(long userId);
+	TokenEntity createToken(MemberVo memberVo);
 
 	/**
 	 * 设置token过期
 	 * @param userId 用户ID
 	 */
-	void expireToken(long userId);
+	void expireToken(String userId);
 
 }

@@ -28,4 +28,11 @@ public class AppTest {
         List<AppVo> all = appService.findAll(memberId);
         System.out.println(JSON.toJSONString(all));
     }
+
+    @Test
+    public void test(){
+        String sql = "/certificate\\ae6c9ab281486bf8a4ac72cbc843a654\\0\\543b00f4-e5b4-4812-965e-059be8241106.png";
+        sql.replace("\\","/");
+        System.out.println(sql);
+    }
 }

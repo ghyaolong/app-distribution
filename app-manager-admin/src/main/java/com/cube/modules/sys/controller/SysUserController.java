@@ -139,7 +139,8 @@ public class SysUserController extends AbstractController {
 		}
 
 		sysUserService.removeByIds(Arrays.asList(userIds));
-		
+
+
 		return R.ok();
 	}
 }

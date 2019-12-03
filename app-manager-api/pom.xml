@@ -5,9 +5,9 @@
 		<version>4.0.0</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>renren-api</artifactId>
+	<artifactId>app-manager-api</artifactId>
 	<packaging>jar</packaging>
-	<description>renren-api</description>
+	<description>app-manager-api</description>
 
 
 	<dependencies>
@@ -45,6 +45,26 @@
             <artifactId>fastjson</artifactId>
 			<version>1.2.59</version>
         </dependency>
+
+		<!-- JWT依赖 -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+
+		<!--二维码-->
+		<dependency>
+			<groupId>net.glxn.qrgen</groupId>
+			<artifactId>javase</artifactId>
+			<version>2.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

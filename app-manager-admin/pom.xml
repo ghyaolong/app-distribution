@@ -5,9 +5,9 @@
 		<version>4.0.0</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>renren-admin</artifactId>
+	<artifactId>app-manager-admin</artifactId>
 	<packaging>jar</packaging>
-	<description>renren-admin</description>
+	<description>app-manager-admin</description>
 
 	<properties>
 		<quartz.version>2.3.0</quartz.version>

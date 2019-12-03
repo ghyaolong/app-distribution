@@ -23,7 +23,7 @@ public class ProvisionVo {
     /**
      *
      */
-    private String[] devices;
+    private String devices;
     /**
      *
      */

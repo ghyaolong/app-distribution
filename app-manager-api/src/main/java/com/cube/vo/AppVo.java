@@ -32,4 +32,11 @@ public class AppVo {
     public List<PackageVo> packageList;
 
     public PackageVo currentPackage;
+
+    /**
+     * 证书地址
+     */
+    public String caPath;
+
+    public String basePath;
 }

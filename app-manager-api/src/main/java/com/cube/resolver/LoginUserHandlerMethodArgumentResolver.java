@@ -9,8 +9,10 @@
 package com.cube.resolver;
 
 import com.cube.annotation.LoginUser;
+import com.cube.entity.MemberEntity;
 import com.cube.entity.UserEntity;
 import com.cube.interceptor.AuthorizationInterceptor;
+import com.cube.service.MemberService;
 import com.cube.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -28,8 +30,10 @@ import org.springframework.web.method.support.ModelAndViewContainer;
  */
 @Component
 public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
+//    @Autowired
+//    private UserService userService;
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
@@ -46,8 +50,9 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
         }
 
         //获取用户信息
-        UserEntity user = userService.getById((Long)object);
+        //UserEntity user = userService.getById((Long)object);
+        MemberEntity byId = memberService.getById(object.toString());
 
-        return user;
+        return byId;
     }
 }

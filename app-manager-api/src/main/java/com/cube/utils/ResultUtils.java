@@ -5,6 +5,13 @@ package com.cube.utils;
  */
 public class ResultUtils {
 
+    public static Result ok(){
+        Result result = new Result();
+        result.setCode("200");
+        result.setMessage("");
+        return result;
+    }
+
     public static Result ok(Object data){
         Result result = new Result();
         result.setCode("200");
@@ -13,12 +20,19 @@ public class ResultUtils {
         return result;
     }
 
-    /*public static Result ok(String msg){
+//    public static Result ok(String msg){
+//        Result result = new Result();
+//        result.setCode("200");
+//        result.setMessage(msg);
+//        return result;
+//    }
+
+        public static Result okMsg(String msg){
         Result result = new Result();
         result.setCode("200");
         result.setMessage(msg);
         return result;
-    }*/
+    }
 
     public static Result ok(String msg,String object){
         Result result = new Result();

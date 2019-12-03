@@ -8,10 +8,13 @@ import com.cube.vo.PackageVo;
 import com.cube.vo.ProvisionVo;
 import com.dd.plist.NSDate;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -136,7 +139,7 @@ public class IPAParser implements PackageParser {
             List<String> provisionedDevices = provisionFile.arrayValueForPath("ProvisionedDevices");
             String[] devices = new String[provisionedDevices.size()];
             devices = provisionedDevices.toArray(devices);
-            provision.setDevices(devices);
+            provision.setDevices(StringUtils.join(provisionedDevices,","));
             provision.setDeviceCount(devices.length);
             provision.setTeamName(provisionFile.stringValueForPath("TeamName"));
             provision.setTeamId(provisionFile.arrayValueForPath("TeamIdentifier").get(0));

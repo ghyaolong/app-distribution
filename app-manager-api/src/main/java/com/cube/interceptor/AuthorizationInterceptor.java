@@ -11,16 +11,20 @@ package com.cube.interceptor;
 
 import com.cube.annotation.Login;
 import com.cube.common.exception.RRException;
+import com.cube.config.WebConfig;
 import com.cube.entity.TokenEntity;
 import com.cube.service.TokenService;
+import com.cube.utils.JwtUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * 权限(Token)验证
@@ -29,10 +33,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Component
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
-    @Autowired
-    private TokenService tokenService;
-
     public static final String USER_KEY = "userId";
+
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -49,6 +51,7 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
 
         //从header中获取token
         String token = request.getHeader("token");
+
         //如果header中不存在token，则从参数中获取token
         if(StringUtils.isBlank(token)){
             token = request.getParameter("token");
@@ -59,14 +62,18 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
             throw new RRException("token不能为空");
         }
 
-        //查询token信息
-        TokenEntity tokenEntity = tokenService.queryByToken(token);
-        if(tokenEntity == null || tokenEntity.getExpireTime().getTime() < System.currentTimeMillis()){
+        //jwt验证
+        String userId = JwtUtil.getValByT(token, WebConfig.Token_EncryKey, WebConfig.Login_User, String.class);
+        if(StringUtils.isEmpty(userId)){
             throw new RRException("token失效，请重新登录");
         }
-
+//        //查询token信息
+//        TokenEntity tokenEntity = tokenService.queryByToken(token);
+//        if(tokenEntity == null || tokenEntity.getExpireTime().getTime() < System.currentTimeMillis()){
+//            throw new RRException("token失效，请重新登录");
+//        }
         //设置userId到request里，后续根据userId，获取用户信息
-        request.setAttribute(USER_KEY, tokenEntity.getUserId());
+        request.setAttribute(USER_KEY, userId);
 
         return true;
     }

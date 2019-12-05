@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>会员管理</title>
+		<#include "/header.html">
+</head>
+<body>
+<div id="rrapp" v-cloak>
+    <div v-show="showList">
+        <div class="grid-btn">
+			<#if shiro.hasPermission("app:member:save")>
+            <a class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+			</#if>
+			<#if shiro.hasPermission("app:member:update")>
+            <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+			</#if>
+			<#if shiro.hasPermission("app:member:delete")>
+            <a class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+			</#if>
+        </div>
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+    </div>
+
+    <div v-show="!showList" class="panel panel-default">
+        <div class="panel-heading">{{title}}</div>
+        <form class="form-horizontal">
+														                    <div class="form-group">
+                        <div class="col-sm-2 control-label">用户名</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.userName" placeholder="用户名"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">密码</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.password" placeholder="密码"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">手机</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.tel" placeholder="手机"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">真实姓名</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.realName" placeholder="真实姓名"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">身份证号</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.idNumber" placeholder="身份证号"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">详细地址</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.address" placeholder="详细地址"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">qq号</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.qq" placeholder="qq号"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">公司名称</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.company" placeholder="公司名称"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">职位</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.position" placeholder="职位"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">头像</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.avatar" placeholder="头像"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">创建时间</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.createTime" placeholder="创建时间"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">审核状态</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.status" placeholder="0：未审核   1：审核中  2：审核通过   3：审核驳回"/>
+
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">冻结状态</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.isForbidden" placeholder="冻结状态"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">剩余下载次数</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.downloadCount" placeholder="剩余下载次数"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">正面照</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.frontPhotoPath" placeholder="正面照"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">背面照</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.backPhotoPath" placeholder="背面照"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">手持照</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.handPhotoPath" placeholder="手持照"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">正面照oss路径</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.frontPhotoOssPath" placeholder="正面照oss路径"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">背面照oss路径</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.backPhotoOssPath" placeholder="背面照oss路径"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">手持照oss路径</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="member.handPhotoOssPath" placeholder="手持照oss路径"/>
+                        </div>
+                    </div>
+							            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+                <input type="button" class="btn btn-primary" id="btnSaveOrUpdate" data-loading-text="保存中..." @click="saveOrUpdate" value="确定"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="${request.contextPath}/statics/js/modules/app/member.js?_${.now?long}"></script>
+</body>
+</html>

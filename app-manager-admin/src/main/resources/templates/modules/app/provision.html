@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IOS文件描述</title>
+		<#include "/header.html">
+</head>
+<body>
+<div id="rrapp" v-cloak>
+    <div v-show="showList">
+        <div class="grid-btn">
+			<#if shiro.hasPermission("app:provision:save")>
+            <a class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+			</#if>
+			<#if shiro.hasPermission("app:provision:update")>
+            <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+			</#if>
+			<#if shiro.hasPermission("app:provision:delete")>
+            <a class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+			</#if>
+        </div>
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+    </div>
+
+    <div v-show="!showList" class="panel panel-default">
+        <div class="panel-heading">{{title}}</div>
+        <form class="form-horizontal">
+														                    <div class="form-group">
+                        <div class="col-sm-2 control-label">UUID</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.uuid" placeholder="UUID"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">创建时间</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.createTime" placeholder="创建时间"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">设备数量</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.deviceCount" placeholder="设备数量"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">设备</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.devices" placeholder="设备"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">过期时间</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.expirationDate" placeholder="过期时间"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">是否事企业版本</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.isEnterprise" placeholder="是否事企业版本"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">teamId</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.teamId" placeholder="teamId"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">team名称</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.teamName" placeholder="team名称"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">类型</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="provision.type" placeholder="类型"/>
+                        </div>
+                    </div>
+							            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+                <input type="button" class="btn btn-primary" id="btnSaveOrUpdate" data-loading-text="保存中..." @click="saveOrUpdate" value="确定"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="${request.contextPath}/statics/js/modules/app/provision.js?_${.now?long}"></script>
+</body>
+</html>

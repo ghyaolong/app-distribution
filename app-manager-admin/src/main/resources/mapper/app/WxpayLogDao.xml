@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cube.modules.app.dao.WxpayLogDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cube.modules.app.entity.WxpayLogEntity" id="wxpayLogMap">
+        <result property="id" column="id"/>
+        <result property="memeberId" column="memeber_id"/>
+        <result property="outTradeNo" column="out_trade_no"/>
+        <result property="resultCode" column="result_code"/>
+        <result property="returnCode" column="return_code"/>
+        <result property="totalFee" column="total_fee"/>
+        <result property="tradeType" column="trade_type"/>
+        <result property="transactionId" column="transaction_id"/>
+        <result property="gmtCreate" column="gmt_create"/>
+        <result property="gmtPayment" column="gmt_payment"/>
+        <result property="timeEnd" column="time_end"/>
+        <result property="payStatus" column="pay_status"/>
+        <result property="orderMoney" column="order_money"/>
+        <result property="body" column="body"/>
+    </resultMap>
+
+
+</mapper>

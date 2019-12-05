@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>微信配置</title>
+		<#include "/header.html">
+</head>
+<body>
+<div id="rrapp" v-cloak>
+    <div v-show="showList">
+        <div class="grid-btn">
+			<#if shiro.hasPermission("app:wxconfig:save")>
+            <a class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+			</#if>
+			<#if shiro.hasPermission("app:wxconfig:update")>
+            <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+			</#if>
+			<#if shiro.hasPermission("app:wxconfig:delete")>
+            <a class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+			</#if>
+        </div>
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+    </div>
+
+    <div v-show="!showList" class="panel panel-default">
+        <div class="panel-heading">{{title}}</div>
+        <form class="form-horizontal">
+														                    <div class="form-group">
+                        <div class="col-sm-2 control-label">appid</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.appId" placeholder="appid"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">商户id</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.mchId" placeholder="商户id"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">同步回调地址</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.returnUrl" placeholder="同步回调地址"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">异步回调地址</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.notifyUrl" placeholder="异步回调地址"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">创建时间</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.createTime" placeholder="创建时间"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">0:正常   1：禁用</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.status" placeholder="0:正常   1：禁用"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">备注</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.remark" placeholder="备注"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">随机字符串</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.nonceStr" placeholder="随机字符串"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">签名</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.sign" placeholder="签名"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">交易类型</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.tradeType" placeholder="交易类型"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">应用对应的凭证</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.appSecret" placeholder="应用对应的凭证"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">应用对应的密钥</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.appKey" placeholder="应用对应的密钥"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">获取预支付id的接口URL</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.gateUrl" placeholder="获取预支付id的接口URL"/>
+                        </div>
+                    </div>
+											                    <div class="form-group">
+                        <div class="col-sm-2 control-label">其它参数。json字符串</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="wxConfig.extension" placeholder="其它参数。json字符串"/>
+                        </div>
+                    </div>
+							            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+                <input type="button" class="btn btn-primary" id="btnSaveOrUpdate" data-loading-text="保存中..." @click="saveOrUpdate" value="确定"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="${request.contextPath}/statics/js/modules/app/wxconfig.js?_${.now?long}"></script>
+</body>
+</html>

@@ -105,4 +105,14 @@ public class MemberEntity implements Serializable {
 	 */
 	private String handPhotoOssPath;
 
+	/**
+	 * 省
+	 */
+	private String province;
+
+	/**
+	 * 市
+	 */
+	private String city;
+
 }

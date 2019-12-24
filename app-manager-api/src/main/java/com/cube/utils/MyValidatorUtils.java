@@ -1,7 +1,9 @@
 package com.cube.utils;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Slf4j
@@ -15,8 +17,10 @@ public class MyValidatorUtils {
 
     public static void main(String[] args) {
         //boolean email = MyValidatorUtils.isEmail("234234@qq.com");
-        boolean idNumber = MyValidatorUtils.isIDNumber("456464654654654");
-        System.out.println(idNumber);
+//        boolean idNumber = MyValidatorUtils.isIDNumber("456464654654654");
+//        System.out.println(idNumber);
+        boolean phoneNumber = MyValidatorUtils.isPhoneNumber("11192073879");
+        System.out.println(phoneNumber);
     }
 
     /**
@@ -71,4 +75,21 @@ public class MyValidatorUtils {
     }
 
 
+    /**
+     * 校验手机号
+     * @param phone
+     * @return
+     */
+    public static boolean isPhoneNumber(String phone) {
+        Pattern p = null;
+        Matcher m = null;
+        boolean b = false;
+        String s2="^[1](([3|5|8][\\d])|([4][4,5,6,7,8,9])|([6][2,5,6,7])|([7][^9])|([9][1,8,9]))[\\d]{8}$";// 验证手机号
+        if(StringUtils.isNotBlank(phone)){
+            p = Pattern.compile(s2);
+            m = p.matcher(phone);
+            b = m.matches();
+        }
+        return b;
+    }
 }

@@ -65,4 +65,8 @@ public class PackageVo {
     private int deviceCount;
     private String message;
 
+    private String memberId;
+
+    public String ossUrl;
+
 }

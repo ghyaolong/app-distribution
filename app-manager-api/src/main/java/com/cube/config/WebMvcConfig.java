@@ -13,6 +13,8 @@ import com.cube.resolver.LoginUserHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.converter.ByteArrayHttpMessageConverter;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -41,7 +43,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authorizationInterceptor).addPathPatterns("/cube/**");
+        //registry.addInterceptor(authorizationInterceptor).addPathPatterns("/cube/**");
+        registry.addInterceptor(authorizationInterceptor).addPathPatterns("/**");
     }
 
     @Override
@@ -62,18 +65,27 @@ public class WebMvcConfig implements WebMvcConfigurer {
             registry.addResourceHandler("/android/**").addResourceLocations(prefix+ "static/upload/android/");
             registry.addResourceHandler("/ios/**").addResourceLocations(prefix + "static/upload/ios/");
             registry.addResourceHandler("/crt/**").addResourceLocations(prefix + "static/crt/");
+            registry.addResourceHandler("/certificate/**").addResourceLocations(prefix+"static/upload/certificate/");
+            registry.addResourceHandler("/avatar/**").addResourceLocations(prefix+"static/upload/avatar/");
+
+
             registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
             registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/js/");
             registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/images/");
-            registry.addResourceHandler("/certificate/**").addResourceLocations("classpath:/static/upload/certificate/");
-            //super.addResourceHandlers(registry);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController( "/" ).setViewName( "forward:/apps" );
+//    }
+
+
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController( "/" ).setViewName( "forward:/apps" );
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(new ByteArrayHttpMessageConverter());
     }
 }

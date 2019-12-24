@@ -42,8 +42,8 @@ public class PathManager {
             if (domain == null) {
                 domain = address.getHostAddress();
             }
-            int httpsPort = Integer.parseInt(environment.getProperty("server.http.port"));
-            int httpPort = Integer.parseInt(environment.getProperty("server.port"));
+            int httpPort = Integer.parseInt(environment.getProperty("server.http.port"));
+            int httpsPort = Integer.parseInt(environment.getProperty("server.port"));
             int port = isHttps ? httpsPort : httpPort;
             String protocol = isHttps ? "https" : "http";
             String portString = ":" + port;
@@ -77,6 +77,14 @@ public class PathManager {
         String baseURL = getBaseURL(isHttps);
         String resourceURL = baseURL + aPackage.getPlatform() + "/" + aPackage.getBundleId() + "/" + aPackage.getCreateTime() + "/";
         return resourceURL;
+    }
+
+    /**
+     * 获取头像URL
+     * @return
+     */
+    public String getAvatarUrl(){
+        return getBaseURL(false);
     }
 
     /**

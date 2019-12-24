@@ -82,4 +82,6 @@ public class PackageEntity implements Serializable {
 	 */
 	private String appId;
 
+	private String ossUrl;
+
 }

@@ -2,10 +2,10 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/renren_security?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      username: renren
-      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://47.75.241.214:3306/app_distribution?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: root
       initial-size: 10
       max-active: 100
       min-idle: 10
@@ -32,3 +32,24 @@ spring:
         wall:
           config:
             multi-statement-allow: true
+  #qq邮箱配置
+  mail:
+    #### qq配置
+    #host: smtp.qq.com
+    #username: 69057739@qq.com
+    #password: aexqncestehebggh   #开启POP3之后设置的客户端授权码
+    #default-encoding: UTF-8
+    #####  163配置
+    host: smtp.163.com
+    username: jhdriver@163.com
+    password: aaaa1111
+    default-encoding: UTF-8
+
+## 自定义配置
+breakpoint:
+  upload:
+    chunkSize: 5 242 800
+    dir: home/software/jiuhuifenfa/end/uploads
+
+
+

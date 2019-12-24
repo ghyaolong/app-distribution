@@ -56,4 +56,12 @@ public class ResultUtils {
         result.setMessage(errMsg);
         return result;
     }
+
+    public static Result error(String code,String errMsg,Object data){
+        Result result = new Result();
+        result.setCode(code);
+        result.setData(data);
+        result.setMessage(errMsg);
+        return result;
+    }
 }

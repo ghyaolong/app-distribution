@@ -39,4 +39,6 @@ public class AppVo {
     public String caPath;
 
     public String basePath;
+
+    public String ossUrl;
 }

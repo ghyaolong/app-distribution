@@ -69,4 +69,5 @@ public class AppEntity implements Serializable {
 	 */
 	private String remark;
 
+	public String ossUrl;
 }

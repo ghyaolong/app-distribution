@@ -4,21 +4,30 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
-  port: 8080  #http端口
+  port: 445  #https端口
   servlet:
     context-path: /app-api
-  http:  #https 端口
-    port: 8082
+  http:  #http 端口
+    port: 8083
+  connection-timeout: 18000000
+  ssl:
+    key-store: classpath:www-ubfly-projks.jks
+    key-store-password:
+    key-store-type: JKS
+    key-alias: 1
+  #domain: a.jhdriver.org
+  domain: 47.75.241.214
+  #domain: 172.20.20.82
 
 # mysql
 spring:
   # 环境 dev|main|prod
   profiles:
-    active: dev
+    active: prod
   servlet:
     multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
+      max-file-size: 150MB
+      max-request-size: 200MB
       enabled: true
   redis:
     database: 0
@@ -44,6 +53,7 @@ config:
     exprie: 3600
     #header名称
     header: token
+  debug: false
 
 
 

@@ -1,30 +1,27 @@
 package com.cube.controller;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.*;
-
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cube.annotation.Login;
+import com.cube.common.utils.R;
+import com.cube.entity.AppEntity;
 import com.cube.entity.PackageEntity;
 import com.cube.entity.ProvisionEntity;
+import com.cube.service.AppService;
 import com.cube.service.PackageService;
 import com.cube.service.ProvisionService;
-import com.cube.utils.MyBeanUtils;
-import com.cube.utils.PathManager;
-import com.cube.utils.Result;
-import com.cube.utils.ResultUtils;
+import com.cube.utils.*;
 import com.cube.vo.AppVo;
 import com.cube.vo.PackageVo;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.cube.entity.AppEntity;
-import com.cube.service.AppService;
-import com.cube.common.utils.PageUtils;
-import com.cube.common.utils.R;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.*;
 
 
 
@@ -35,6 +32,7 @@ import com.cube.common.utils.R;
  * @email 289911401@qq.com
  * @date 2019-11-20 17:35:43
  */
+@Slf4j
 @RestController
 @RequestMapping("cube/app")
 public class AppController {
@@ -52,11 +50,18 @@ public class AppController {
 
     /**
      * 列表
+     * @param appName app名称
      */
     @Login
     @RequestMapping("/list")
-    public Result list(@RequestAttribute("userId") String memberId){
-        List<AppEntity> list = appService.list(new QueryWrapper<AppEntity>().lambda().eq(AppEntity::getMemberId, memberId));
+    public Result list(@RequestAttribute("userId") String memberId,String appName){
+        QueryWrapper<AppEntity> queryWrapper = new QueryWrapper<>();
+        LambdaQueryWrapper<AppEntity> lambda = queryWrapper.lambda();
+        lambda.eq(AppEntity::getMemberId, memberId);
+        if(!StringUtils.isBlank(appName)){
+            lambda.like(AppEntity::getName,appName.trim());
+        }
+        List<AppEntity> list = appService.list(queryWrapper);
 
         List<AppVo> appVos = MyBeanUtils.copyList(list, AppVo.class);
         for (AppVo appVo : appVos) {
@@ -88,21 +93,28 @@ public class AppController {
         return ResultUtils.ok(appVo);
     }
 
+    @Login
     @DeleteMapping("/del/{appId}")
     public Result delAppById(@PathVariable("appId") String appId){
+        appService.removeById(appId);
+        Map<String,Object> paramMap = new HashMap<>();
+        paramMap.put("app_id",appId);
+        packageService.removeByMap(paramMap);
         return ResultUtils.okMsg("删除成功");
     }
 
     private void supplyPackage(AppVo appVo) {
         PackageVo packageVo = getCurrentPackage(appVo.getCurrentId());
-        appVo.setVersion(packageVo.getVersion());
-        appVo.setBuildVersion(packageVo.getBuildVersion());
-        appVo.setInstallPath(pathManager.getBaseURL(false) + "s/" + appVo.getShortCode());
-        appVo.setMinVersion(appVo.getMinVersion());
-        appVo.setCurrentPackage(additionToPackage(packageVo, pathManager));
-        appVo.setIcon(PathManager.getRelativePath(appVo.getCurrentPackage()) + "icon.png");
-        List<PackageEntity> packageEntityList = packageService.list(new QueryWrapper<PackageEntity>().lambda().eq(PackageEntity::getAppId, appVo.getId()));
-        appVo.setPackageList(sortPackages(packageEntityList, pathManager));
+        if(packageVo!=null){
+            appVo.setVersion(packageVo.getVersion());
+            appVo.setBuildVersion(packageVo.getBuildVersion());
+            appVo.setInstallPath(pathManager.getBaseURL(false) + "s/" + appVo.getShortCode());
+            appVo.setMinVersion(appVo.getMinVersion());
+            appVo.setCurrentPackage(additionToPackage(packageVo, pathManager));
+            appVo.setIcon(PathManager.getRelativePath(appVo.getCurrentPackage()) + "icon.png");
+            List<PackageEntity> packageEntityList = packageService.list(new QueryWrapper<PackageEntity>().lambda().eq(PackageEntity::getAppId, appVo.getId()));
+            appVo.setPackageList(sortPackages(packageEntityList, pathManager));
+        }
     }
 
     /**
@@ -112,6 +124,9 @@ public class AppController {
      */
     private PackageVo getCurrentPackage(String packageId) {
         PackageEntity packageEntity = packageService.getById(packageId);
+        if(packageEntity==null){
+            return null;
+        }
         return MyBeanUtils.copy(packageEntity,PackageVo.class);
     }
 
@@ -134,9 +149,9 @@ public class AppController {
     private PackageVo additionToPackage(PackageVo aPackage,PathManager pathManager){
         AppEntity appEntity = appService.getById(aPackage.getAppId());
 
-        aPackage.setDownloadURL(pathManager.getBaseURL(false) + "p/" + aPackage.getId());
-        aPackage.setSafeDownloadURL(pathManager.getBaseURL(true) + "p/" + aPackage.getId());
-        aPackage.setIconURL(pathManager.getPackageResourceURL(aPackage, true) + "icon.png");
+        aPackage.setDownloadURL(pathManager.getBaseURL(false) + "cube/package/p/" + aPackage.getId());
+        aPackage.setSafeDownloadURL(pathManager.getBaseURL(true) + "cube/package/p/" + aPackage.getId());
+        aPackage.setIconURL(pathManager.getPackageResourceURL(aPackage, false) + "icon.png");
         aPackage.setDisplaySize(String.format("%.2f MB", aPackage.getSize() / (1.0F * FileUtils.ONE_MB)));
         Date updateTime = new Date(aPackage.getCreateTime());
         String displayTime = (new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(updateTime);
@@ -224,10 +239,10 @@ public class AppController {
     /**
      * 删除
      */
+    @Login
     @RequestMapping("/delete")
     public R delete(@RequestBody String[] ids){
         appService.removeByIds(Arrays.asList(ids));
-
         return R.ok();
     }
 

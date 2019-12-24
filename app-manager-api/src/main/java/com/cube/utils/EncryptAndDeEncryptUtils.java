@@ -5,7 +5,7 @@ import com.cube.common.exception.RRException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
-public class PasswordUtils {
+public class EncryptAndDeEncryptUtils {
 
     /**
      * 对字符串md5加密
@@ -27,8 +27,8 @@ public class PasswordUtils {
         }
     }
 
-//    public static void main(String[] args) {
-//        String admin = PasswordUtils.getMD5("admin");
-//        System.out.println(admin);
-//    }
+    public static void main(String[] args) {
+        String admin = EncryptAndDeEncryptUtils.getMD5("deng123456");
+        System.out.println(admin);
+    }
 }

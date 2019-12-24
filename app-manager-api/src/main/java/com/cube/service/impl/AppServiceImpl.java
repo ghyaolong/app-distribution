@@ -64,7 +64,11 @@ public class AppServiceImpl extends ServiceImpl<AppDao, AppEntity> implements Ap
     @Override
     public AppVo saveByPackage(PackageVo aPackage) {
         //App app = this.appDao.get(aPackage.getBundleId(), aPackage.getPlatform());
-        AppEntity appEntity = this.baseMapper.selectOne(new QueryWrapper<AppEntity>().lambda().eq(AppEntity::getBundleId, aPackage.getBundleId()).eq(AppEntity::getPlatform, aPackage.getPlatform()));
+        AppEntity appEntity = this.baseMapper.selectOne(new QueryWrapper<AppEntity>().lambda()
+                .eq(AppEntity::getBundleId, aPackage.getBundleId())
+                .eq(AppEntity::getPlatform, aPackage.getPlatform())
+                .eq(AppEntity::getMemberId,aPackage.getMemberId())
+        );
         if(appEntity==null){
             appEntity = new AppEntity();
             String shortCode = CodeGenerator.generate(6);
@@ -76,6 +80,7 @@ public class AppServiceImpl extends ServiceImpl<AppDao, AppEntity> implements Ap
             BeanUtils.copyProperties(aPackage, appEntity);
             appEntity.setShortCode(shortCode);
             appEntity.setCurrentId(packageID);
+
             //保存app
             this.baseMapper.insert(appEntity);
 

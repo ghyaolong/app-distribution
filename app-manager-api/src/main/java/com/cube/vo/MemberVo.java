@@ -93,4 +93,19 @@ public class MemberVo {
 
     private String token;
 
+    /**
+     * 验证码
+     */
+    private String validCode;
+
+    /**
+     * 省
+     */
+    private String province;
+
+    /**
+     * 市
+     */
+    private String city;
+
 }

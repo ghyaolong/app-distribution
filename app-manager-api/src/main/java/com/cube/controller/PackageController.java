@@ -80,7 +80,7 @@ public class PackageController {
         AppEntity appEntity = appService.getOne(new QueryWrapper<AppEntity>().lambda().eq(AppEntity::getShortCode, shortCode));
 
         if(appEntity==null){
-            throw new RRException("APP");
+            throw new RRException("APP不存在");
         }
         AppVo appVo = MyBeanUtils.copy(appEntity, AppVo.class);
 
@@ -123,7 +123,7 @@ public class PackageController {
 
         aPackage.setDownloadURL(pathManager.getBaseURL(false) + "cube/package/p/" + aPackage.getId());
         aPackage.setSafeDownloadURL(pathManager.getBaseURL(true) + "cube/package/p/" + aPackage.getId());
-        aPackage.setIconURL(pathManager.getPackageResourceURL(aPackage, true) + "icon.png");
+        aPackage.setIconURL(pathManager.getPackageResourceURL(aPackage, false) + "icon.png");
         aPackage.setDisplaySize(String.format("%.2f MB", aPackage.getSize() / (1.0F * FileUtils.ONE_MB)));
         Date updateTime = new Date(aPackage.getCreateTime());
         String displayTime = (new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(updateTime);

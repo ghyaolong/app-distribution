@@ -10,6 +10,7 @@ package com.cube;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
+import org.apache.coyote.http11.Http11NioProtocol;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.boot.SpringApplication;
@@ -17,8 +18,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.IOException;
 
 @SpringBootApplication
 public class ApiApplication {
@@ -49,7 +53,7 @@ public class ApiApplication {
 
 	@Bean
 	public Connector httpConnector() {
-		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+		Connector connector = new Connector("org.apache.coyote.http11.Http11Nio2Protocol");
 		int httpPort = Integer.parseInt(environment.getProperty("server.http.port"));
 		int httpsPort = Integer.parseInt(environment.getProperty("server.port"));
 		connector.setScheme("http");
@@ -57,6 +61,27 @@ public class ApiApplication {
 		connector.setSecure(true);
 		connector.setRedirectPort(httpsPort);
 		return connector;
+
+		/*Connector connector = new Connector("org.apache.coyote.http11.Http2NioProtocol");
+		Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
+		try {
+			File keystore = new ClassPathResource("keystore").getFile();
+			File truststore = new ClassPathResource("keystore").getFile();
+			connector.setScheme("https");
+			connector.setSecure(true);
+			connector.setPort(8443);
+			protocol.setSSLEnabled(true);
+			protocol.setKeystoreFile(keystore.getAbsolutePath());
+			protocol.setKeystorePass("changeit");
+			protocol.setTruststoreFile(truststore.getAbsolutePath());
+			protocol.setTruststorePass("changeit");
+			protocol.setKeyAlias("apitester");
+			return connector;
+		}
+		catch (IOException ex) {
+			throw new IllegalStateException("can't access keystore: [" + "keystore"
+					+ "] or truststore: [" + "keystore" + "]", ex);
+		}*/
 	}
 
 }

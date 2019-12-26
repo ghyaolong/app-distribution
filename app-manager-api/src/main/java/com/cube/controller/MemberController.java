@@ -79,13 +79,16 @@ public class MemberController {
     @Value("${spring.mail.username}")
     private String from;
 
+    @Value("${config.jwt.expire}")
+    private Integer expire;
 
 
-    @Autowired
-    private TokenService tokenService;
+
+//    @Autowired
+//    private TokenService tokenService;
 
     //过期时间3600s
-    private Integer expire = 3600;
+    //private Integer expire = 3600;
 
     @Autowired
     public void setRedis(@Qualifier("redisTemplate") RedisTemplate redis) {
@@ -174,7 +177,8 @@ public class MemberController {
         }
         String md5Password = EncryptAndDeEncryptUtils.getMD5(memberVo.getPassword());
         memberVo.setPassword(md5Password);
-
+        //默认赠送100次下载次数
+        memberVo.setDownloadCount(100);
         MemberEntity memberEntity = MyBeanUtils.copy(memberVo, MemberEntity.class);
         memberService.save(memberEntity);
 
@@ -192,7 +196,9 @@ public class MemberController {
     @PostMapping("/getUserInfo")
     public Result getUserInfo(@RequestAttribute("userId")String userId){
         MemberEntity memberEntity = memberService.getById(userId);
-        memberEntity.setAvatar(pathManager.getBaseURL(false)+memberEntity.getAvatar());
+        if(!StringUtils.isEmpty(memberEntity.getAvatar())){
+            memberEntity.setAvatar(pathManager.getBaseURL(false)+memberEntity.getAvatar());
+        }
         MemberVo copy = MyBeanUtils.copy(memberEntity, MemberVo.class, new String[]{"password"});
         return ResultUtils.ok(copy);
     }

@@ -31,7 +31,7 @@
       <key>metadata</key>
       <dict>
         <key>bundle-identifier</key>
-        <string>${aPackage.bundleID}</string>
+        <string>${aPackage.bundleId}</string>
         <key>bundle-version</key>
         <string><![CDATA[${aPackage.version}]]></string>
         <key>kind</key>

@@ -4,7 +4,7 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
-  port: 445  #https端口
+  port: 446  #https端口
   servlet:
     context-path: /app-api
   http:  #http 端口
@@ -15,33 +15,19 @@ server:
     key-store-password:
     key-store-type: JKS
     key-alias: 1
-  #domain: a.jhdriver.org
-  domain: 47.75.241.214
-  #domain: 172.20.20.82
-
+  #domain: www.jhdriver.org
+  #domain: 47.75.241.214
+  domain: 172.20.20.82
 # mysql
 spring:
   # 环境 dev|main|prod
   profiles:
-    active: prod
+    active: dev
   servlet:
     multipart:
       max-file-size: 150MB
       max-request-size: 200MB
       enabled: true
-  redis:
-    database: 0
-    host: localhost
-    port: 6379
-    password:      # 密码（默认为空）
-    timeout: 6000ms  # 连接超时时长（毫秒）
-    jedis:
-      pool:
-        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
-        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
-        max-idle: 10      # 连接池中的最大空闲连接
-        min-idle: 5       # 连接池中的最小空闲连接
-
 renren:
   redis:
     open: false  # 是否开启redis缓存  true开启   false关闭
@@ -49,8 +35,8 @@ renren:
 config:
   jwt:
     secret: abcdefg1234567
-    #token有效时长
-    exprie: 3600
+    #token有效时长 单位：s
+    expire: 36000
     #header名称
     header: token
   debug: false

@@ -3,9 +3,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://47.75.241.214:3306/app_distribution?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://47.75.136.65:3306/app_distribution?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       username: root
-      password: root
+      password: Zhiyang0308
       initial-size: 10
       max-active: 100
       min-idle: 10
@@ -44,12 +44,24 @@ spring:
     username: jhdriver@163.com
     password: aaaa1111
     default-encoding: UTF-8
+  redis:
+    database: 0
+    host: localhost
+    port: 6380
+    password:      # 密码（默认为空）
+    timeout: 6000ms  # 连接超时时长（毫秒）
+    jedis:
+      pool:
+        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10      # 连接池中的最大空闲连接
+        min-idle: 5       # 连接池中的最小空闲连接
 
 ## 自定义配置
 breakpoint:
   upload:
     chunkSize: 5 242 800
-    dir: home/software/jiuhuifenfa/end/uploads
+    dir: /home/software/jiuhuifenfa/end/uploads
 
 
 

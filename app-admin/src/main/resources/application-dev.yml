@@ -2,7 +2,7 @@ spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         druid:
-            driver-class-name: com.mysql.cj.jdbc.Driver
+            driver-class-name: com.mysql.jdbc.Driver
             url: jdbc:mysql://localhost:3306/app_distribution1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
             username: root
             password: root
@@ -47,3 +47,6 @@ spring:
 #      url: jdbc:postgresql://localhost:5432/renren_security
 #      username: renren
 #      password: 123456
+config:
+    upload: E:/IdeaWorkspace/app-distribution/app-manager-api/target/classes/static/upload/
+

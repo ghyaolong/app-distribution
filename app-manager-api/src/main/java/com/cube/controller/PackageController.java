@@ -101,6 +101,30 @@ public class PackageController {
         return ResultUtils.ok(appVo);
     }
 
+    @GetMapping("/s/{shortCode}/")
+    public Result preview(@PathVariable("shortCode") String shortCode){
+        AppEntity appEntity = appService.getOne(new QueryWrapper<AppEntity>().lambda().eq(AppEntity::getShortCode, shortCode));
+
+        if(appEntity==null){
+            throw new RRException("APP不存在");
+        }
+        AppVo appVo = MyBeanUtils.copy(appEntity, AppVo.class);
+        PackageEntity packageEntity = packageService.getById(appEntity.getCurrentId());
+        if(packageEntity==null){
+            throw new RRException("该版本不存在");
+        }
+        PackageVo packageVo = MyBeanUtils.copy(packageEntity, PackageVo.class);
+        appVo.setVersion(packageVo.getVersion());
+        appVo.setBuildVersion(packageVo.getBuildVersion());
+        appVo.setInstallPath(pathManager.getBaseURL(false) + "cube/package/s/" + appVo.getShortCode());
+        appVo.setMinVersion(appVo.getMinVersion());
+        appVo.setCurrentPackage(additionToPackage(packageVo, pathManager));
+        appVo.setIcon(PathManager.getRelativePath(appVo.getCurrentPackage()) + "icon.png");
+        appVo.setCaPath(this.pathManager.getCAPath());
+        appVo.setBasePath(this.pathManager.getBaseURL(false));
+        return ResultUtils.ok(appVo);
+    }
+
 
     /**
      * 修改版本标注

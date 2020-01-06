@@ -52,7 +52,7 @@ public class ShiroConfig {
         Map<String, String> filterMap = new LinkedHashMap<>();
         filterMap.put("/webjars/**", "anon");
         filterMap.put("/druid/**", "anon");
-        filterMap.put("/app/**", "anon");
+//        filterMap.put("/app/**", "anon");
         filterMap.put("/sys/login", "anon");
 
         //静态资源

@@ -83,20 +83,22 @@ public class PackageController {
     @RequestMapping("/delete")
     public R delete(@RequestBody String[] ids){
         if(ids!=null){
-            for (String id : ids) {
-                PackageEntity one = packageService.getById(id);
-                if(one!=null){
-                    String appId = one.getAppId();
-                    Map<String,Object> params = new HashMap<>();
-                    params.put("app_id",appId);
-                    Collection<PackageEntity> packageEntities = packageService.listByMap(params);
-                    if(CollectionUtils.isEmpty(packageEntities)){
-                        appService.removeById(appId);
-                    }
-                    break;
-                }
-            }
             packageService.removeByIds(Arrays.asList(ids));
+//            for (String id : ids) {
+//                PackageEntity one = packageService.getById(id);
+//                packageService.removeById(id);
+//                if(one==null){
+//                    String appId = one.getAppId();
+//                    Map<String,Object> params = new HashMap<>();
+//                    params.put("app_id",appId);
+//                    Collection<PackageEntity> packageEntities = packageService.listByMap(params);
+//                    if(CollectionUtils.isEmpty(packageEntities)){
+//                        appService.removeById(appId);
+//                    }
+//                    break;
+//                }
+//            }
+
         }
         return R.ok();
     }

@@ -53,6 +53,18 @@ public class RechargeServiceImpl extends ServiceImpl<RechargeDao, RechargeEntity
                 new Query<RechargeEntity>().getPage(params),queryWrapper
 
         );
+        if(!CollectionUtils.isEmpty(page.getRecords())){
+            page.getRecords().stream().forEach(x->{
+                String memberId = x.getMemberId();
+                System.out.println(memberId);
+                MemberEntity memberEntity = memberService.getById(memberId);
+                if(memberEntity!=null){
+                    x.setUserName(memberEntity.getUserName());
+                }else{
+                    x.setUserName(null);
+                }
+            });
+        }
 
         return new PageUtils(page);
     }

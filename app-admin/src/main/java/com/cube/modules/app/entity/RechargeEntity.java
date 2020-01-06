@@ -33,6 +33,11 @@ public class RechargeEntity implements Serializable {
 	 * 会员id
 	 */
 	private String memberId;
+
+	/**
+	 * 会员名称
+	 */
+	private transient  String userName;
 	/**
 	 * 充值金额
 	 */
@@ -69,6 +74,11 @@ public class RechargeEntity implements Serializable {
 	 * 购买的下载次数包
 	 */
 	private String goodsId;
+
+	/**
+	 * 商品名称
+	 */
+	private String goodsName;
 	/**
 	 * 商品价格
 	 */

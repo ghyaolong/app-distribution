@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.cube.modules.app.service.PackageService;
 import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,6 +41,7 @@ public class AppController {
      * 列表
      */
     @RequestMapping("/list")
+    @RequiresPermissions("app:app:info")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = appService.queryPage(params);
 
@@ -61,6 +63,7 @@ public class AppController {
      * 保存
      */
     @RequestMapping("/save")
+    @RequiresPermissions("app:app:save")
     public R save(@RequestBody AppEntity app){
         appService.save(app);
 
@@ -71,6 +74,7 @@ public class AppController {
      * 修改
      */
     @RequestMapping("/update")
+    @RequiresPermissions("app:app:update")
     public R update(@RequestBody AppEntity app){
         appService.updateById(app);
         
@@ -81,6 +85,7 @@ public class AppController {
      * 删除
      */
     @RequestMapping("/delete")
+    @RequiresPermissions("app:app:delete")
     public R delete(@RequestBody String[] ids){
         if(ids!=null){
             for (String id : ids) {

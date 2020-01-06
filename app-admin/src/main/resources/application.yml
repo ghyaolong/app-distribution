@@ -4,7 +4,7 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
-  port: 446  #https端口
+  port: 447  #https端口
   http:
     port: 8084
   connection-timeout: 5000ms
